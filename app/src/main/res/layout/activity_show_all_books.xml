@@ -41,15 +41,27 @@
         app:srcCompat="@drawable/untitled_design__5_" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/add_fab_btn"
+        app:maxImageSize="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="60dp"
         android:backgroundTint="@color/rust"
+        android:tint="@color/bgr_color"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/add_icon" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_width="395dp"
+        android:layout_height="528dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_library"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

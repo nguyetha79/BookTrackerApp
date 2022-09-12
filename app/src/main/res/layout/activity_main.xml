@@ -51,7 +51,7 @@
         app:srcCompat="@drawable/_903245_book_love_icon" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_continue"
         android:layout_width="138dp"
         android:layout_height="48dp"
         android:layout_marginBottom="196dp"

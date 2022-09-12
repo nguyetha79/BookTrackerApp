@@ -11,6 +11,7 @@
     <string name="my_library">My Library</string>
     <string name="book_title">The thorn birds</string>
     <string name="book_author">Colleen McCullough</string>
+    <string name="book_num_pages">692</string>
 
 
     <string name="tv_title">Title</string>
