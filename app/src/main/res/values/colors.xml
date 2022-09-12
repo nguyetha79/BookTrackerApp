@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="bgr_color">#EEEAE7</color>
-    <color name="rust">#8D4C2E</color>
+    <color name="text_color">#8D4C2E</color>
     <color name="cardview_bgr_color">#B4BFC5</color>
     <color name="author_color">#8C8D4C2E</color>
 

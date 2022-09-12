@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchBook">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/LL_layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="15dp">
+
+        <EditText
+            android:id="@+id/editText_search_book"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_weight="4"
+            android:padding="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:hint="Enter your book title"
+            android:textColorHint="@color/author_color"
+            tools:ignore="Suspicious0dp"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="26dp" />
+
+        <ImageButton
+            android:id="@+id/search_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:backgroundTint="@color/text_color"
+            app:srcCompat="@drawable/search_icon"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_search_book"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LL_layout_search" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/text_color"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/btn_go"
+        android:layout_width="138dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="@color/text_color"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="8dp"
+        android:layout_marginTop="115dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_go"
+        android:textColor="@color/bgr_color"
+        android:textSize="18sp"/>
+</RelativeLayout>

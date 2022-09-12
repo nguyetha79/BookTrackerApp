@@ -13,7 +13,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/my_library"
-        android:textColor="@color/rust"
+        android:textColor="@color/text_color"
         android:textSize="33sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/rust"
+        android:backgroundTint="@color/text_color"
         android:tint="@color/bgr_color"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,13 +55,14 @@
         app:srcCompat="@drawable/add_icon" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mRecyclerView"
-        android:layout_width="395dp"
+        android:id="@+id/recyclerView_show_book"
+        android:layout_width="match_parent"
         android:layout_height="528dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_my_library"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
