@@ -14,8 +14,10 @@
         android:padding="10dp">
 
         <RelativeLayout
+            android:id="@+id/Rlayout_title_author_cover"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -54,6 +56,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/Rlayout_book_infos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp">
@@ -73,39 +76,49 @@
                     android:paddingTop="5dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:layout_weight="3">
+                    android:weightSum="3">
 
                     <RelativeLayout
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1">
 
-                        <ImageView
-                            android:id="@+id/star_rating"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:padding="3dp"
-                            app:srcCompat="@drawable/polygon_2" />
-
-                        <TextView
-                            android:id="@+id/num_rating"
+                        <RelativeLayout
+                            android:id="@+id/layout_rating"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_toEndOf="@id/star_rating"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:paddingLeft="2dp"
-                            android:paddingRight="2dp"
-                            android:text="@string/tv_ex_rating"
-                            android:textColor="@color/color_primary"
-                            android:textSize="25sp" />
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/star_rating"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:padding="3dp"
+                                app:srcCompat="@drawable/polygon_2" />
+
+                            <TextView
+                                android:id="@+id/num_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_toEndOf="@id/star_rating"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center"
+                                android:paddingLeft="2dp"
+
+                                android:paddingRight="2dp"
+                                android:text="@string/tv_ex_rating"
+                                android:textColor="@color/color_primary"
+                                android:textSize="25sp" />
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/tv_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/num_rating"
+                            android:layout_below="@id/layout_rating"
                             android:fontFamily="@font/poppins_regular"
                             android:paddingLeft="12dp"
                             android:paddingTop="2dp"
@@ -186,5 +199,100 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/Llayout_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp"
+                android:text="@string/tv_status"
+                android:textColor="@color/color_primary"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_status1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="7dp"
+                        android:paddingRight="30dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/status_reading"
+                        android:textColor="@color/color_primary"
+                        android:textSize="20sp" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Llayout_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="213dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingLeft="15dp"
+                android:paddingTop="7dp"
+                android:text="@string/tv_progress"
+                android:textColor="@color/color_primary"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="34dp"
+                android:paddingTop="5dp">
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="198dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:progressBackgroundTint="@color/progress_bgr_tint_color"
+                    android:thumbTint="@color/color_primary" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>

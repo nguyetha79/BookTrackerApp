@@ -25,6 +25,8 @@
         <item>Read</item>
     </string-array>
 
+    <string name="status_reading">Reading</string>
+
     <string name="tv_rating">Rating</string>
     <string name="tv_pages">Pages</string>
     <string name="tv_lang">Language</string>
