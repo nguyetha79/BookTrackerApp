@@ -27,7 +27,7 @@
 
     <string name="tv_rating">Rating</string>
     <string name="tv_pages">Pages</string>
-    <string name="tv_lang">Current Page</string>
+    <string name="tv_lang">Language</string>
 
     <string name="tv_ex_rating">4.5</string>
     <string name="tv_ex_pages">692</string>

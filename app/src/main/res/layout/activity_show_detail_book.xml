@@ -9,29 +9,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="186dp"
+                android:layout_height="231dp"
+                android:layout_below="@id/tv_author"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22dp"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="38dp"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:padding="3dp"
                 android:text="@string/book_title"
                 android:textAlignment="center"
-                android:textColor="@color/text_color"
-                android:textSize="25sp"
+                android:textColor="@color/color_primary"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -39,14 +44,147 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_title"
-                android:padding="5dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="0dp"
+                android:padding="3dp"
                 android:text="@string/book_author"
                 android:textAlignment="center"
-                android:textColor="@color/author_color"
-                android:textSize="18sp" />
+                android:textColor="@color/color_secondary"
+                android:textSize="19sp" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/cardview_book_info_bgr_color">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_weight="3">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/star_rating"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:padding="3dp"
+                            app:srcCompat="@drawable/polygon_2" />
+
+                        <TextView
+                            android:id="@+id/num_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_toEndOf="@id/star_rating"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="@string/tv_ex_rating"
+                            android:textColor="@color/color_primary"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/num_rating"
+                            android:fontFamily="@font/poppins_regular"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="2dp"
+                            android:text="@string/tv_rating"
+                            android:textColor="@color/color_secondary"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/num_pages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="@string/tv_ex_pages"
+                            android:textColor="@color/color_primary"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/tv_pages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/num_pages"
+                            android:fontFamily="@font/poppins_regular"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="2dp"
+                            android:text="@string/tv_pages"
+                            android:textColor="@color/color_secondary"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/lang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="@string/tv_ex_lang"
+                            android:textColor="@color/color_primary"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/tv_lang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/lang"
+                            android:fontFamily="@font/poppins_regular"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="2dp"
+                            android:text="@string/tv_lang"
+                            android:textColor="@color/color_secondary"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
     </LinearLayout>
-
-
 </ScrollView>

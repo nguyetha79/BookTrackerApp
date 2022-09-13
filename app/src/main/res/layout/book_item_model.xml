@@ -15,7 +15,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@color/cardview_bgr_color"
+        app:cardBackgroundColor="@color/cardview_book_item_bgr_color"
         app:cardCornerRadius="15dp"
         app:cardElevation="8dp">
 
@@ -40,7 +40,7 @@
                 android:padding="3dp"
                 android:text="@string/book_title"
                 android:textAlignment="center"
-                android:textColor="@color/text_color"
+                android:textColor="@color/color_primary"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -53,7 +53,7 @@
                 android:padding="5dp"
                 android:text="@string/book_author"
                 android:textAlignment="center"
-                android:textColor="@color/author_color"
+                android:textColor="@color/color_secondary"
                 android:textSize="18sp" />
 
         </RelativeLayout>

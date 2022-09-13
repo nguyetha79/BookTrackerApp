@@ -9,9 +9,13 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="bgr_color">#EEEAE7</color>
-    <color name="text_color">#8D4C2E</color>
-    <color name="cardview_bgr_color">#B4BFC5</color>
-    <color name="author_color">#8C8D4C2E</color>
+    <color name="cardview_book_item_bgr_color">#B4BFC5</color>
+    <color name="cardview_book_info_bgr_color">#e6ccbd</color>
+    <color name="cardview_book_review_bgr_color">#B4BFC5</color>
+
+    <color name="color_primary">#8D4C2E</color>
+    <color name="color_secondary">#8C8D4C2E</color>
+
 
 
 
