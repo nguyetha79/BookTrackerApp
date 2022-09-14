@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ShowAllBooks">
 
-    <TextView
-        android:id="@+id/tv_my_library"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/my_library"
-        android:textColor="@color/color_primary"
-        android:textSize="33sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="501dp"
@@ -40,30 +26,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/untitled_design__5_" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_fab_btn"
-        app:maxImageSize="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/color_primary"
-        android:tint="@color/bgr_color"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/add_icon" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_show_book"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="528dp"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_my_library"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_my_library"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/my_library"
+            android:textColor="@color/color_primary"
+            android:textSize="33sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_fab_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/color_primary"
+            android:clickable="true"
+            android:tint="@color/bgr_color"
+            app:maxImageSize="50dp"
+            app:srcCompat="@drawable/add_icon" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_show_book"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_my_library"
+            android:padding="10dp" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

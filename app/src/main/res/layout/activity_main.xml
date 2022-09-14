@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/app_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/app_name"
-        android:textColor="@color/color_primary"
-        android:textSize="33sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -39,33 +27,46 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/untitled_design__6_" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="153dp"
-        android:layout_height="153dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_name"
-        app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/_903245_book_love_icon" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_continue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="196dp"
-        android:backgroundTint="@color/color_primary"
-        android:fontFamily="@font/poppins_semibold"
-        android:paddingLeft="35dp"
-        android:paddingTop="8dp"
-        android:paddingRight="35dp"
-        android:paddingBottom="5dp"
-        android:text="@string/btn_continue"
-        android:textColor="@color/bgr_color"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="136dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/color_primary"
+            android:textSize="33sp" />
+
+        <ImageView
+            android:id="@+id/icon_book"
+            android:layout_width="153dp"
+            android:layout_height="153dp"
+            android:layout_below="@id/app_name"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/_903245_book_love_icon" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_book"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/color_primary"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingLeft="35dp"
+            android:paddingTop="8dp"
+            android:paddingRight="35dp"
+            android:paddingBottom="5dp"
+            android:text="@string/btn_continue"
+            android:textColor="@color/bgr_color"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
