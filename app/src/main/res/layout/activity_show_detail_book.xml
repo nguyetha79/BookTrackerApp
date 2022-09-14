@@ -59,7 +59,7 @@
             android:id="@+id/Rlayout_book_infos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="22dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
