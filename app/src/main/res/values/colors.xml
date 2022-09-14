@@ -17,6 +17,8 @@
     <color name="color_secondary">#8C8D4C2E</color>
 
     <color name="progress_bgr_tint_color">#c8aea0</color>
+    <color name="fragment_bgr_color">#218D4C2E</color>
+    <color name="fragment_text_color">#686230</color>
     <color name="btn_map_color">#A67554</color>
 
 
