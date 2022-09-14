@@ -6,7 +6,7 @@
     <string name="btn_add">ADD</string>
     <string name="btn_update">UPDATE</string>
     <string name="btn_delete">DELETE</string>
-    <string name="btn_map">Find nearby store</string>
+    <string name="btn_map">Find nearby bookstore</string>
 
     <string name="my_library">My Library</string>
     <string name="book_title">The thorn birds</string>

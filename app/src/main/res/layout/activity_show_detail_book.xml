@@ -296,7 +296,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             app:cardCornerRadius="30dp">
 
@@ -319,8 +319,9 @@
 
 
                 <ScrollView
+                    android:id="@+id/scroll_view_note"
                     android:layout_width="match_parent"
-                    android:layout_height=""
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/tv_note">
 
                     <TextView
@@ -335,12 +336,24 @@
                         android:hint="no previous note"
                         android:textColor="@color/color_primary"
                         android:textSize="20sp" />
-
                 </ScrollView>
 
-
-
-
+                <Button
+                    android:id="@+id/btn_continue"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/scroll_view_note"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/btn_map_color"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/btn_map"
+                    android:textColor="@color/bgr_color"
+                    android:textSize="15sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
