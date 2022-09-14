@@ -54,7 +54,7 @@
             android:layout_marginBottom="60dp"
             android:backgroundTint="@color/color_primary"
             android:clickable="true"
-            android:tint="@color/bgr_color"
+            app:tint="@color/bgr_color"
             app:maxImageSize="50dp"
             app:srcCompat="@drawable/add_icon" />
 
