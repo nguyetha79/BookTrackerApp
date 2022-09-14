@@ -24,6 +24,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_PAGES = "pages";
     private static final String COLUMN_RATING = "rating";
     private static final String COLUMN_LANG = "language";
+    private static final String COLUMN_STATUS = "status";
+    private static final String COLUMN_CURR_PAGE = "curr_page";
+    private static final String COLUMN_PROGRESS = "progress";
 
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -39,7 +42,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                         COLUMN_AUTHORS + " TEXT, " +
                         COLUMN_PAGES + " INTEGER, " +
                         COLUMN_RATING + " FLOAT, " +
-                        COLUMN_LANG + " TEXT);";
+                        COLUMN_LANG + " TEXT, " +
+                        COLUMN_STATUS + " TEXT, " +
+                        COLUMN_CURR_PAGE + " INTEGER, " +
+                        COLUMN_PROGRESS + " TEXT);";
         db.execSQL(query);
     }
 
@@ -60,6 +66,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_AUTHORS, authors);
         contentValues.put(COLUMN_PAGES, pages);
         contentValues.put(COLUMN_RATING, rating);
+        contentValues.put(COLUMN_LANG, language);
+        contentValues.put(COLUMN_LANG, language);
+        contentValues.put(COLUMN_LANG, language);
         contentValues.put(COLUMN_LANG, language);
 
         long result = db.insert(TABLE_NAME, null, contentValues);

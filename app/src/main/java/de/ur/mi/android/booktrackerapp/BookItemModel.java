@@ -1,23 +1,27 @@
 package de.ur.mi.android.booktrackerapp;
 
-import java.util.ArrayList;
-
 public class BookItemModel {
-    private String cover;
     private String title;
-    private ArrayList<String> authors;
+    private String authors;
+    private String cover;
     private int numPages;
     private float rating;
     private String language;
+    private String status;
+    private int currPage;
+    private int progress;
 
-    public BookItemModel(String cover, String title, ArrayList<String> authors,
-                         int numPages, float rating, String language) {
+    public BookItemModel(String title, String authors, String cover, int numPages,
+                         float rating, String language, String status, int currPage, int progress) {
         this.cover = cover;
         this.title = title;
         this.authors = authors;
         this.numPages = numPages;
         this.rating = rating;
         this.language = language;
+        this.status = status;
+        this.currPage = currPage;
+        this.progress = progress;
     }
 
     public String getCover() {
@@ -36,11 +40,11 @@ public class BookItemModel {
         this.title = title;
     }
 
-    public ArrayList<String> getAuthors() {
+    public String getAuthors() {
         return authors;
     }
 
-    public void setAuthors(ArrayList<String> authors) {
+    public void setAuthors(String authors) {
         this.authors = authors;
     }
 
@@ -66,5 +70,29 @@ public class BookItemModel {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public int getCurrPage() {
+        return currPage;
+    }
+
+    public void setCurrPage(int currPage) {
+        this.currPage = currPage;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
     }
 }

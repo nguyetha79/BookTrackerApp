@@ -11,7 +11,6 @@
     <color name="bgr_color">#EEEAE7</color>
     <color name="cardview_book_item_bgr_color">#B4BFC5</color>
     <color name="cardview_book_info_bgr_color">#e6ccbd</color>
-    <color name="cardview_book_review_bgr_color">#B4BFC5</color>
 
     <color name="color_primary">#8D4C2E</color>
     <color name="color_secondary">#8C8D4C2E</color>
@@ -20,10 +19,5 @@
     <color name="fragment_bgr_color">#218D4C2E</color>
     <color name="fragment_text_color">#686230</color>
     <color name="btn_map_color">#A67554</color>
-
-
-
-
-
 
 </resources>

@@ -84,22 +84,6 @@
             android:indeterminateTint="@color/color_primary"
             android:indeterminateTintMode="src_atop" />
 
-        <Button
-            android:id="@+id/btn_go"
-            android:layout_width="138dp"
-            android:layout_height="48dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="115dp"
-            android:layout_marginBottom="196dp"
-            android:backgroundTint="@color/color_primary"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="5dp"
-            android:text="@string/btn_go"
-            android:textColor="@color/bgr_color"
-            android:textSize="18sp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
