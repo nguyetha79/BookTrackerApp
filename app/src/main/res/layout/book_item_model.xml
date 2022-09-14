@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_book_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -19,22 +20,26 @@
         app:cardElevation="8dp">
 
         <RelativeLayout
+            android:id="@+id/Rlayout_book_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/iv_cover"
+                android:id="@+id/iv_cover_book_item"
                 android:layout_width="75dp"
                 android:layout_height="80dp"
-                android:layout_margin="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_title_book_item"
                 android:layout_width="wrap_content"
                 android:layout_height="38dp"
                 android:layout_marginTop="12dp"
-                android:layout_toEndOf="@+id/iv_cover"
+                android:layout_toEndOf="@+id/iv_cover_book_item"
                 android:fontFamily="@font/poppins_medium"
                 android:padding="3dp"
                 android:text="@string/book_title"
@@ -44,11 +49,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_author"
+                android:id="@+id/tv_author_book_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_title"
-                android:layout_toEndOf="@id/iv_cover"
+                android:layout_below="@id/tv_title_book_item"
+                android:layout_toEndOf="@id/iv_cover_book_item"
                 android:padding="5dp"
                 android:text="@string/book_author"
                 android:textAlignment="center"

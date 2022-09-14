@@ -28,6 +28,7 @@
         app:srcCompat="@drawable/untitled_design__6_" />
 
     <RelativeLayout
+        android:id="@+id/Rlayout_app_overview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

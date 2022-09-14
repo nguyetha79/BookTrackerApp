@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_city_name_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="170dp"
-    android:layout_marginBottom="55dp"
     android:layout_marginLeft="30dp"
+    android:layout_marginTop="170dp"
     android:layout_marginRight="30dp"
-    android:elevation="2dp"
+    android:layout_marginBottom="55dp"
     android:background="@drawable/fragment_bgr"
-    android:id="@+id/search_city_name_fragment"
+    android:elevation="2dp"
     tools:context=".AddBookFragment">
 
     <RelativeLayout
+        android:id="@+id/frag_Rlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="30dp"
         android:paddingLeft="30dp"
+        android:paddingTop="30dp"
         android:paddingRight="30dp"
-        android:paddingBottom="15dp"        >
+        android:paddingBottom="15dp">
 
         <RelativeLayout
-            android:id="@+id/frag_Rlayout_title"
+            android:id="@+id/frag_Rlayout_title_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/frag_tv_title"
+                android:id="@+id/tv_title_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
@@ -36,10 +37,10 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:id="@+id/frag_tv_title_content"
+                android:id="@+id/tv_title_content_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/frag_tv_title"
+                android:layout_below="@+id/tv_title_update"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/book_title"
                 android:textColor="@color/color_primary"
@@ -48,15 +49,15 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/frag_Llayout_status"
-            android:layout_below="@+id/frag_Rlayout_title"
+            android:id="@+id/Llayout_status_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/frag_Rlayout_title_update"
             android:layout_marginTop="25dp"
             android:weightSum="3">
 
             <TextView
-                android:id="@+id/frag_tv_status"
+                android:id="@+id/tv_status_update"
                 android:layout_width="103dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -67,7 +68,7 @@
                 android:textSize="25sp" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/frag_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -78,15 +79,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/frag_Llayout_curr_page"
-            android:layout_below="@+id/frag_Llayout_status"
+            android:id="@+id/Llayout_curr_page_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/Llayout_status_update"
             android:layout_marginTop="25dp"
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/frag_tv_curr_page"
+                android:id="@+id/tv_curr_page_update"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -97,18 +98,20 @@
                 android:textSize="25sp" />
 
             <RelativeLayout
+                android:id="@+id/frag_Rlayout_curr_page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingTop="5dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/frag_cardView_curr_page"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/bgr_color">
 
                     <EditText
-                        android:id="@+id/tv_status1"
+                        android:id="@+id/frag_editText_curr_page"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
@@ -129,7 +132,7 @@
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/frag_Llayout_curr_page"
+            android:layout_below="@id/Llayout_curr_page_update"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/color_primary"
@@ -142,6 +145,5 @@
             android:textColor="@color/bgr_color"
             android:textSize="16sp" />
     </RelativeLayout>
-
 
 </FrameLayout>

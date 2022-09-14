@@ -8,6 +8,7 @@
     tools:context=".ShowDetailBook">
 
     <LinearLayout
+        android:id="@+id/Llayout_detail_book"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -20,16 +21,16 @@
             android:layout_marginTop="7dp">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imageView_cover_detail"
                 android:layout_width="186dp"
                 android:layout_height="231dp"
-                android:layout_below="@id/tv_author"
+                android:layout_below="@id/tv_author_book_item"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="22dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_title_book_infos"
                 android:layout_width="wrap_content"
                 android:layout_height="38dp"
                 android:layout_margin="12dp"
@@ -42,10 +43,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_author"
+                android:id="@+id/tv_author_book_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_title"
+                android:layout_below="@id/tv_title_book_infos"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="0dp"
                 android:padding="3dp"
@@ -62,6 +63,7 @@
             android:layout_marginTop="22dp">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_book_infos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -69,6 +71,7 @@
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
+                    android:id="@+id/Llayout_book_infos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
@@ -79,14 +82,14 @@
                     android:weightSum="3">
 
                     <RelativeLayout
-
+                        android:id="@+id/Rlayout_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1">
 
                         <RelativeLayout
-                            android:id="@+id/layout_rating"
+                            android:id="@+id/Rlayout_num_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
@@ -118,7 +121,7 @@
                             android:id="@+id/tv_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/layout_rating"
+                            android:layout_below="@id/Rlayout_num_rating"
                             android:fontFamily="@font/poppins_regular"
                             android:paddingLeft="12dp"
                             android:paddingTop="2dp"
@@ -128,12 +131,12 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:id="@+id/Rlayout_pages"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1">
-
 
                         <TextView
                             android:id="@+id/num_pages"
@@ -162,15 +165,15 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:id="@+id/Rlayout_lang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1">
 
-
                         <TextView
-                            android:id="@+id/lang"
+                            android:id="@+id/lang_content"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
@@ -186,7 +189,7 @@
                             android:id="@+id/tv_lang"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/lang"
+                            android:layout_below="@id/lang_content"
                             android:fontFamily="@font/poppins_regular"
                             android:paddingLeft="12dp"
                             android:paddingTop="2dp"
@@ -199,7 +202,7 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/Llayout_status"
+            android:id="@+id/Llayout_status_book_infos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -209,7 +212,7 @@
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/tv_status"
+                android:id="@+id/tv_status_book_infos"
                 android:layout_width="167dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -221,18 +224,20 @@
                 android:textSize="25sp" />
 
             <RelativeLayout
+                android:id="@+id/Rlayout_curr_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingTop="5dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_curr_status_book_infos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="15dp">
 
                     <TextView
-                        android:id="@+id/tv_status1"
+                        android:id="@+id/tv_curr_status_book_infos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
@@ -258,7 +263,7 @@
             android:weightSum="3">
 
             <TextView
-                android:id="@+id/tv_progress"
+                android:id="@+id/tv_progress_book_infos"
                 android:layout_width="213dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -270,6 +275,7 @@
                 android:textSize="25sp" />
 
             <RelativeLayout
+                android:id="@+id/Rlayout_seekBar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -289,18 +295,20 @@
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_note_book_infos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             app:cardCornerRadius="30dp">
 
             <RelativeLayout
+                android:id="@+id/Rlayout_note_book_infos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="15dp">
 
                 <TextView
-                    android:id="@+id/tv_note"
+                    android:id="@+id/tv_note_book_infos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
@@ -312,16 +320,16 @@
                     android:textSize="25sp" />
 
                 <ScrollView
-                    android:id="@+id/scroll_view_note"
+                    android:id="@+id/scrollView_note_book_infos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_note">
+                    android:layout_below="@id/tv_note_book_infos">
 
                     <TextView
                         android:id="@+id/tv_note_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_note"
+                        android:layout_below="@+id/tv_note_book_infos"
                         android:layout_marginLeft="12dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="12dp"
@@ -329,15 +337,15 @@
                         android:fontFamily="@font/poppins_regular"
                         android:hint="no previous note"
                         android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam "
-                        android:textColor="@color/color_primary"
+                        android:textColor="@color/color_secondary"
                         android:textSize="20sp" />
                 </ScrollView>
 
                 <Button
-                    android:id="@+id/btn_continue"
+                    android:id="@+id/btn_open_map"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/scroll_view_note"
+                    android:layout_below="@+id/scrollView_note_book_infos"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
@@ -347,20 +355,21 @@
                     android:paddingTop="10dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
-                    android:text="@string/btn_map"
+                    android:text="@string/btn_open_map"
                     android:textColor="@color/bgr_color"
                     android:textSize="15sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
+            android:id="@+id/Llayout_btn_update_delete"
             android:layout_width="362dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:weightSum="2">
 
             <Button
-                android:id="@+id/btn_update"
+                android:id="@+id/btn_update_book_infos"
                 android:layout_width="66dp"
                 android:layout_height="48dp"
                 android:layout_margin="15dp"
@@ -392,5 +401,6 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

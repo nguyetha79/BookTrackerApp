@@ -17,6 +17,7 @@
         app:cardCornerRadius="13dp">
 
         <RelativeLayout
+            android:id="@+id/RLayout_update"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -32,12 +33,12 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:id="@+id/frag_Rlayout_title"
+                    android:id="@+id/frag_Rlayout_title_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/frag_tv_title"
+                        android:id="@+id/tv_title_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
@@ -46,10 +47,10 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/frag_tv_title_content"
+                        android:id="@+id/tv_title_content_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/frag_tv_title"
+                        android:layout_below="@+id/tv_title_update"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="@string/book_title"
                         android:textColor="@color/color_primary"
@@ -58,15 +59,15 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/frag_Llayout_status"
+                    android:id="@+id/Llayout_status_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/frag_Rlayout_title"
+                    android:layout_below="@+id/frag_Rlayout_title_update"
                     android:layout_marginTop="25dp"
                     android:weightSum="3">
 
                     <TextView
-                        android:id="@+id/frag_tv_status"
+                        android:id="@+id/tv_status_update"
                         android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -77,7 +78,7 @@
                         android:textSize="25sp" />
 
                     <Spinner
-                        android:id="@+id/spinner2"
+                        android:id="@+id/spinner_update"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
@@ -88,15 +89,15 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/frag_Llayout_curr_page"
+                    android:id="@+id/Llayout_curr_page_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/frag_Llayout_status"
+                    android:layout_below="@+id/Llayout_status_update"
                     android:layout_marginTop="25dp"
                     android:weightSum="2">
 
                     <TextView
-                        android:id="@+id/frag_tv_curr_page"
+                        android:id="@+id/tv_curr_page_update"
                         android:layout_width="184dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -107,18 +108,20 @@
                         android:textSize="25sp" />
 
                     <RelativeLayout
+                        android:id="@+id/Rlayout_note_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingTop="5dp">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView_note_update"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/bgr_color">
 
                             <EditText
-                                android:id="@+id/tv_status1"
+                                android:id="@+id/editText_note_update"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins_medium"
@@ -190,7 +193,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_update_book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardView_update"
