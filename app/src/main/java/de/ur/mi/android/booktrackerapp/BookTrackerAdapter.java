@@ -39,24 +39,24 @@ public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.
         BookItemModel currBookItemModel = bookItemsList.get(position);
 
         String title = currBookItemModel.getTitle();
-        String authors = currBookItemModel.getAuthors();
-        String cover = currBookItemModel.getCover();
+        String author = currBookItemModel.getAuthor();
+        String coverLink = currBookItemModel.getCover();
 
         holder.tvBookTitle.setText(title);
-        holder.tvBookAuthors.setText( authors);
+        holder.tvBookAuthors.setText(author);
 
-        Picasso.get().load(currBookItemModel.getCover()).into(holder.ivBookCover);
+        Picasso.get().load(coverLink).into(holder.ivBookCover);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
               Intent intent = new Intent(context, ShowDetailBook.class);
               intent.putExtra("title", currBookItemModel.getTitle());
-              intent.putExtra("authors", currBookItemModel.getTitle());
-              intent.putExtra("cover", currBookItemModel.getTitle());
-              intent.putExtra("numPages", currBookItemModel.getTitle());
-              intent.putExtra("rating", currBookItemModel.getTitle());
-              intent.putExtra("language", currBookItemModel.getTitle());
+              intent.putExtra("author", currBookItemModel.getAuthor());
+              intent.putExtra("cover", currBookItemModel.getCover());
+              intent.putExtra("numPages", currBookItemModel.getNumPages());
+              intent.putExtra("rating", currBookItemModel.getRating());
+              intent.putExtra("language", currBookItemModel.getLanguage());
 
               context.startActivity(intent);
             }

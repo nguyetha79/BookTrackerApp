@@ -2,7 +2,7 @@ package de.ur.mi.android.booktrackerapp;
 
 public class BookItemModel {
     private String title;
-    private String authors;
+    private String author;
     private String cover;
     private int numPages;
     private float rating;
@@ -11,11 +11,21 @@ public class BookItemModel {
     private int currPage;
     private int progress;
 
-    public BookItemModel(String title, String authors, String cover, int numPages,
-                         float rating, String language, String status, int currPage, int progress) {
+    public BookItemModel(String title, String author, String cover,
+                         float rating, int numPages, String language) {
         this.cover = cover;
         this.title = title;
-        this.authors = authors;
+        this.author = author;
+        this.numPages = numPages;
+        this.rating = rating;
+        this.language = language;
+    }
+
+    public BookItemModel(String title, String author, String cover, float rating,
+                         int numPages, String language, String status, int currPage, int progress) {
+        this.cover = cover;
+        this.title = title;
+        this.author = author;
         this.numPages = numPages;
         this.rating = rating;
         this.language = language;
@@ -40,12 +50,12 @@ public class BookItemModel {
         this.title = title;
     }
 
-    public String getAuthors() {
-        return authors;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuthors(String authors) {
-        this.authors = authors;
+    public void setAuthor(String authors) {
+        this.author = authors;
     }
 
     public int getNumPages() {

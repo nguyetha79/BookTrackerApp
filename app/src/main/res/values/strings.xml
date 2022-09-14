@@ -33,6 +33,6 @@
     <string name="tv_ex_rating">4.5</string>
     <string name="tv_ex_pages">692</string>
     <string name="tv_ex_curr_pages">344</string>
-    <string name="tv_ex_lang">Eng</string>
+    <string name="tv_ex_lang">EN</string>
 
 </resources>
