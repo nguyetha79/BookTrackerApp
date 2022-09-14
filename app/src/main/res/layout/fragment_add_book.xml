@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="200dp"
+    android:layout_marginTop="170dp"
     android:layout_marginBottom="45dp"
     android:layout_marginLeft="30dp"
     android:layout_marginRight="30dp"
     android:elevation="2dp"
     android:background="@drawable/fragment_bgr"
-
     android:id="@+id/search_city_name_fragment"
     tools:context=".AddBookFragment">
 
@@ -132,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/frag_Llayout_curr_page"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="30dp"
             android:backgroundTint="@color/color_primary"
             android:fontFamily="@font/poppins_semibold"
             android:paddingLeft="15dp"
