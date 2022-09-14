@@ -17,7 +17,6 @@
     <string name="tv_curr_page">Current Page</string>
     <string name="tv_note">Note</string>
     <string name="tv_progress">Progress</string>
-    <string name="tv_review">Progress</string>
 
     <string-array name="status">
         <item>To read</item>
