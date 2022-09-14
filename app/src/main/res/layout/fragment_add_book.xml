@@ -134,10 +134,10 @@
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/color_primary"
             android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="15dp"
+            android:paddingLeft="35dp"
             android:paddingTop="8dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="8dp"
+            android:paddingRight="35dp"
+            android:paddingBottom="5dp"
             android:text="@string/btn_add"
             android:textColor="@color/bgr_color"
             android:textSize="16sp" />
