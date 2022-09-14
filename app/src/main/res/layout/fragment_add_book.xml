@@ -108,12 +108,13 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/bgr_color">
 
-                    <TextView
+                    <EditText
                         android:id="@+id/tv_status1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
                         android:gravity="center"
+                        android:inputType="number"
                         android:paddingLeft="30dp"
                         android:paddingTop="7dp"
                         android:paddingRight="30dp"

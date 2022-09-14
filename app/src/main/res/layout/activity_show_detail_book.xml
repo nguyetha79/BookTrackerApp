@@ -335,10 +335,10 @@
 
                 <Button
                     android:id="@+id/btn_continue"
-                    android:layout_alignParentBottom="true"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/scroll_view_note"
+                    android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
                     android:backgroundTint="@color/btn_map_color"
