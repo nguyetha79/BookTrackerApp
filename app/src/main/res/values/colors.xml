@@ -10,6 +10,7 @@
 
     <color name="bgr_color">#EEEAE7</color>
     <color name="cardview_book_item_bgr_color">#B4BFC5</color>
+    <color name="cardview_book_item_bgr_color2">#bcb8a3</color>
     <color name="cardview_book_info_bgr_color">#e6ccbd</color>
 
     <color name="color_primary">#8D4C2E</color>
