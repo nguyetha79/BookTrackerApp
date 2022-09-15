@@ -14,7 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/SearchBook2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/RecyclerViewInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/SearchBookAdapter2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/ShowAllBooksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/ShowAllBooksAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +38,8 @@
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="valueResourceFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -79,6 +83,10 @@
     </key>
     <key name="android.template.-1568833844">
       <recent name="de.ur.mi.android.booktrackerapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.ur.mi.android.booktrackerapp.Activity" />
+      <recent name="de.ur.mi.android.booktrackerapp.Adapter" />
     </key>
   </component>
   <component name="RunManager">

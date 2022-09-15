@@ -30,6 +30,9 @@
             android:name=".Activity.SearchBook"
             android:exported="false" />
         <activity
+            android:name=".Activity.SearchBook2"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ShowAllBooks"
             android:exported="false" />
         <activity
