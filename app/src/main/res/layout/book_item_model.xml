@@ -15,6 +15,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/cardview_book_item_bgr_color"
         app:cardCornerRadius="15dp"
         app:cardElevation="8dp">
@@ -26,26 +27,27 @@
 
             <ImageView
                 android:id="@+id/iv_cover_book_item"
-                android:layout_width="75dp"
-                android:layout_height="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="12dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
+
             <TextView
                 android:id="@+id/tv_title_book_item"
                 android:layout_width="wrap_content"
-                android:layout_height="38dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_toEndOf="@+id/iv_cover_book_item"
                 android:fontFamily="@font/poppins_medium"
                 android:padding="3dp"
                 android:text="@string/book_title"
-                android:textAlignment="center"
                 android:textColor="@color/color_primary"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -53,10 +55,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_title_book_item"
+                android:layout_marginTop="2dp"
                 android:layout_toEndOf="@id/iv_cover_book_item"
-                android:padding="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
                 android:text="@string/book_author"
-                android:textAlignment="center"
                 android:textColor="@color/color_secondary"
                 android:textSize="18sp" />
 

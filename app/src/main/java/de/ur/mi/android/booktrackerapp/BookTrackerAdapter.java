@@ -2,6 +2,7 @@ package de.ur.mi.android.booktrackerapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -45,22 +48,38 @@ public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.
         holder.tvBookTitle.setText(title);
         holder.tvBookAuthors.setText(author);
 
-        Picasso.get().load(coverLink).into(holder.ivBookCover);
+        if (coverLink =="No cover"){
+            String uri = "@drawable/no_book_cover_available";
+            int imageResource = context.getResources()
+                    .getIdentifier(uri, null, context.getPackageName());
+            Drawable res = context.getResources().getDrawable(imageResource);
+            holder.ivBookCover.setImageDrawable(res);
+        } else {
+            Picasso.get().load(coverLink).into(holder.ivBookCover);
+        }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              Intent intent = new Intent(context, ShowDetailBook.class);
-              intent.putExtra("title", currBookItemModel.getTitle());
-              intent.putExtra("author", currBookItemModel.getAuthor());
-              intent.putExtra("cover", currBookItemModel.getCover());
-              intent.putExtra("numPages", currBookItemModel.getNumPages());
-              intent.putExtra("rating", currBookItemModel.getRating());
-              intent.putExtra("language", currBookItemModel.getLanguage());
+        holder.itemView.setOnClickListener(view -> {
+                openAddBookFragment(view);
 
-              context.startActivity(intent);
-            }
+//              Intent intent = new Intent(context, ShowDetailBook.class);
+//              intent.putExtra("title", currBookItemModel.getTitle());
+//              intent.putExtra("author", currBookItemModel.getAuthor());
+//              intent.putExtra("cover", currBookItemModel.getCover());
+//              intent.putExtra("numPages", currBookItemModel.getNumPages());
+//              intent.putExtra("rating", currBookItemModel.getRating());
+//              intent.putExtra("language", currBookItemModel.getLanguage());
+//
+//              context.startActivity(intent);
         });
+
+    }
+
+    private void openAddBookFragment(View view) {
+//        AppCompatActivity activity = (AppCompatActivity) view.getContext();
+//        activity.getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.recyclerView_search_book, new AddBookFragment())
+//                .addToBackStack(null)
+//                .commit();
 
     }
 
@@ -78,6 +97,10 @@ public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.
             tvBookTitle = itemView.findViewById(R.id.tv_title_book_item);
             tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item);
             ivBookCover = itemView.findViewById(R.id.iv_cover_book_item);
+
+//            itemView.setOnClickListener(view -> {
+//                if (re)
+//            });
         }
     }
 }

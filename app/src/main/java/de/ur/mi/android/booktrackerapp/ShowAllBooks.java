@@ -14,7 +14,8 @@ import java.util.ArrayList;
 
 public class ShowAllBooks extends AppCompatActivity {
 
-    private Button fabBtn;
+    private FloatingActionButton fabBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +23,7 @@ public class ShowAllBooks extends AppCompatActivity {
 
         fabBtn = findViewById(R.id.add_fab_btn);
         fabBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, SearchBook.class);
+            Intent intent = new Intent(ShowAllBooks.this, SearchBook.class);
             startActivity(intent);
         });
     }

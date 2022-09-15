@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         continueBtn = findViewById(R.id.btn_continue);
         continueBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, ShowAllBooks.class);
+            Intent intent = new Intent(MainActivity.this, ShowAllBooks.class);
             startActivity(intent);
         });
     }

@@ -5,14 +5,15 @@ public class BookItemModel {
     private String author;
     private String cover;
     private int numPages;
-    private float rating;
+    private double rating;
     private String language;
     private String status;
     private int currPage;
     private int progress;
 
+
     public BookItemModel(String title, String author, String cover,
-                         float rating, int numPages, String language) {
+                         double rating, int numPages, String language) {
         this.cover = cover;
         this.title = title;
         this.author = author;
@@ -21,7 +22,7 @@ public class BookItemModel {
         this.language = language;
     }
 
-    public BookItemModel(String title, String author, String cover, float rating,
+    public BookItemModel(String title, String author, String cover, double rating,
                          int numPages, String language, String status, int currPage, int progress) {
         this.cover = cover;
         this.title = title;
@@ -66,11 +67,11 @@ public class BookItemModel {
         this.numPages = numPages;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
