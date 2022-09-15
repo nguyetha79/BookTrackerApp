@@ -64,19 +64,6 @@ public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.
             Picasso.get().load(coverLink).into(holder.ivBookCover);
         }
 
-//        holder.mainLayoutBookItem.setOnClickListener(view -> {
-//
-//              Intent intent = new Intent(context, AddBookActivity.class);
-//              intent.putExtra("title", currBookItemModel.getTitle());
-//              intent.putExtra("author", currBookItemModel.getAuthor());
-//              intent.putExtra("cover", currBookItemModel.getCover());
-//              intent.putExtra("numPages", currBookItemModel.getNumPages());
-//              intent.putExtra("rating", currBookItemModel.getRating());
-//              intent.putExtra("language", currBookItemModel.getLanguage());
-//
-//              context.startActivity(intent);
-//        });
-
     }
 
     @Override
@@ -87,7 +74,6 @@ public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView tvBookTitle, tvBookAuthors;
         private ImageView ivBookCover;
-        private LinearLayout mainLayoutBookItem;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
@@ -95,17 +81,12 @@ public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.
             tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item);
             ivBookCover = itemView.findViewById(R.id.iv_cover_book_item);
 
-            mainLayoutBookItem = itemView.findViewById(R.id.main_layout_book_item);
+            itemView.setOnClickListener(view -> {
+                if (recyclerViewInterface != null){
+                    int pos = getAdapterPosition();
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (recyclerViewInterface != null){
-                        int pos = getAdapterPosition();
-
-                        if (pos != RecyclerView.NO_POSITION){
-                            recyclerViewInterface.onItemClick(pos);
-                        }
+                    if (pos != RecyclerView.NO_POSITION){
+                        recyclerViewInterface.onItemClick(pos);
                     }
                 }
             });
