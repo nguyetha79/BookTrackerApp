@@ -1,4 +1,4 @@
-package de.ur.mi.android.booktrackerapp;
+package de.ur.mi.android.booktrackerapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,25 +6,27 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.MyViewHolder> {
+import de.ur.mi.android.booktrackerapp.Activity.AddBookActivity;
+import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
+import de.ur.mi.android.booktrackerapp.R;
+
+public class SearchBookAdapter extends RecyclerView.Adapter<SearchBookAdapter.MyViewHolder> {
 
     private Context context;
     private ArrayList<BookItemModel> bookItemsList;
 
-    public BookTrackerAdapter(Context context, ArrayList<BookItemModel> bookItemsList) {
+    public SearchBookAdapter(Context context, ArrayList<BookItemModel> bookItemsList) {
         this.context = context;
         this.bookItemsList = bookItemsList;
     }
@@ -58,28 +60,18 @@ public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.
             Picasso.get().load(coverLink).into(holder.ivBookCover);
         }
 
-        holder.itemView.setOnClickListener(view -> {
-                openAddBookFragment(view);
+        holder.mainLayoutBookItem.setOnClickListener(view -> {
 
-//              Intent intent = new Intent(context, ShowDetailBook.class);
-//              intent.putExtra("title", currBookItemModel.getTitle());
-//              intent.putExtra("author", currBookItemModel.getAuthor());
-//              intent.putExtra("cover", currBookItemModel.getCover());
-//              intent.putExtra("numPages", currBookItemModel.getNumPages());
-//              intent.putExtra("rating", currBookItemModel.getRating());
-//              intent.putExtra("language", currBookItemModel.getLanguage());
-//
-//              context.startActivity(intent);
+              Intent intent = new Intent(context, AddBookActivity.class);
+              intent.putExtra("title", currBookItemModel.getTitle());
+              intent.putExtra("author", currBookItemModel.getAuthor());
+              intent.putExtra("cover", currBookItemModel.getCover());
+              intent.putExtra("numPages", currBookItemModel.getNumPages());
+              intent.putExtra("rating", currBookItemModel.getRating());
+              intent.putExtra("language", currBookItemModel.getLanguage());
+
+              context.startActivity(intent);
         });
-
-    }
-
-    private void openAddBookFragment(View view) {
-//        AppCompatActivity activity = (AppCompatActivity) view.getContext();
-//        activity.getSupportFragmentManager().beginTransaction()
-//                .replace(R.id.recyclerView_search_book, new AddBookFragment())
-//                .addToBackStack(null)
-//                .commit();
 
     }
 
@@ -91,6 +83,7 @@ public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView tvBookTitle, tvBookAuthors;
         private ImageView ivBookCover;
+        private LinearLayout mainLayoutBookItem;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -98,9 +91,7 @@ public class BookTrackerAdapter extends RecyclerView.Adapter<BookTrackerAdapter.
             tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item);
             ivBookCover = itemView.findViewById(R.id.iv_cover_book_item);
 
-//            itemView.setOnClickListener(view -> {
-//                if (re)
-//            });
+            mainLayoutBookItem = itemView.findViewById(R.id.main_layout_book_item);
         }
     }
 }

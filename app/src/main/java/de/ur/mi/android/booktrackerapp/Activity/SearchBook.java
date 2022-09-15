@@ -1,32 +1,30 @@
-package de.ur.mi.android.booktrackerapp;
+package de.ur.mi.android.booktrackerapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
+import de.ur.mi.android.booktrackerapp.R;
+import de.ur.mi.android.booktrackerapp.Adapter.SearchBookAdapter;
 
 public class SearchBook extends AppCompatActivity {
 
@@ -41,7 +39,7 @@ public class SearchBook extends AppCompatActivity {
 
     private ArrayList<BookItemModel> bookItemsList;
     private ArrayList<String> titles, authors, covers;
-    private BookTrackerAdapter adapter;
+    private SearchBookAdapter adapter;
     private BookItemModel bookItemModel;
 
     @Override
@@ -89,12 +87,17 @@ public class SearchBook extends AppCompatActivity {
                             JSONObject jsonObjVolume = itemsObj.getJSONObject("volumeInfo");
 
                             String title = jsonObjVolume.getString("title");
-                            JSONArray authorsArray = jsonObjVolume.getJSONArray("authors");
-                            String author = (String) authorsArray.get(0);
+
+                            String author = "";
+                            if (!jsonObjVolume.has("authors")){
+                                author += "No author";
+                            } else {
+                                JSONArray authorsArray = jsonObjVolume.getJSONArray("authors");
+                                author = (String) authorsArray.get(0);
+                            }
 
                             JSONObject imageLinks;
                             String cover = "";
-
                             if (!jsonObjVolume.has("imageLinks")){
                                 cover += "No cover";
                             } else {
@@ -104,7 +107,6 @@ public class SearchBook extends AppCompatActivity {
 
                             double rating;
                             int numPages;
-
                             if (!jsonObjVolume.has("averageRating")){
                                 rating = 0;
                                 numPages = 0;
@@ -117,7 +119,7 @@ public class SearchBook extends AppCompatActivity {
 
                             bookItemModel = new BookItemModel(title, author, cover, rating, numPages, language);
                             bookItemsList.add(bookItemModel);
-                            adapter = new BookTrackerAdapter(this, bookItemsList);
+                            adapter = new SearchBookAdapter(this, bookItemsList);
 
                             LinearLayoutManager linearLayoutManager =
                                     new LinearLayoutManager(this, RecyclerView.VERTICAL, false);

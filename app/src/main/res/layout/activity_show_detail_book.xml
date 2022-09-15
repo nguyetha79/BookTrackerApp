@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ShowDetailBook">
+    tools:context=".Activity.ShowDetailBook">
 
     <LinearLayout
         android:id="@+id/Llayout_detail_book"

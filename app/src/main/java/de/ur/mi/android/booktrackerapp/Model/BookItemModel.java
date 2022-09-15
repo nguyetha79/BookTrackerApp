@@ -1,11 +1,11 @@
-package de.ur.mi.android.booktrackerapp;
+package de.ur.mi.android.booktrackerapp.Model;
 
 public class BookItemModel {
     private String title;
     private String author;
     private String cover;
-    private int numPages;
     private double rating;
+    private int numPages;
     private String language;
     private String status;
     private int currPage;

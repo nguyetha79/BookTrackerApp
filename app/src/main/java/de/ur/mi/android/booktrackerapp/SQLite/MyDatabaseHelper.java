@@ -1,4 +1,4 @@
-package de.ur.mi.android.booktrackerapp;
+package de.ur.mi.android.booktrackerapp.SQLite;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -18,15 +18,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String TABLE_NAME = "my_bookTrackerApp";
-    private static final String COLUMN_COVER = "cover";
     private static final String COLUMN_TITLE = "title";
     private static final String COLUMN_AUTHORS = "authors";
-    private static final String COLUMN_PAGES = "pages";
+    private static final String COLUMN_COVER = "cover";
     private static final String COLUMN_RATING = "rating";
+    private static final String COLUMN_PAGES = "pages";
     private static final String COLUMN_LANG = "language";
     private static final String COLUMN_STATUS = "status";
     private static final String COLUMN_CURR_PAGE = "curr_page";
-    private static final String COLUMN_PROGRESS = "progress";
 
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -37,15 +36,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query =
                 "CREATE TABLE " + TABLE_NAME +
-                        " (" + COLUMN_COVER + " TEXT, " +
-                        COLUMN_TITLE + " TEXT, " +
+                        " (" + COLUMN_TITLE + " TEXT, " +
                         COLUMN_AUTHORS + " TEXT, " +
+                        COLUMN_COVER + " TEXT, " +
+                        COLUMN_RATING + " DOUBLE, " +
                         COLUMN_PAGES + " INTEGER, " +
-                        COLUMN_RATING + " FLOAT, " +
                         COLUMN_LANG + " TEXT, " +
                         COLUMN_STATUS + " TEXT, " +
-                        COLUMN_CURR_PAGE + " INTEGER, " +
-                        COLUMN_PROGRESS + " TEXT);";
+                        COLUMN_CURR_PAGE + " INTEGER);";
         db.execSQL(query);
     }
 
@@ -56,7 +54,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void addData(String cover, String title, String authors,
-                        int pages, float rating, String language){
+                        double rating, int pages, String language,
+                        String status, int currPage){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -64,12 +63,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_COVER, cover);
         contentValues.put(COLUMN_TITLE, title);
         contentValues.put(COLUMN_AUTHORS, authors);
-        contentValues.put(COLUMN_PAGES, pages);
         contentValues.put(COLUMN_RATING, rating);
+        contentValues.put(COLUMN_PAGES, pages);
         contentValues.put(COLUMN_LANG, language);
-        contentValues.put(COLUMN_LANG, language);
-        contentValues.put(COLUMN_LANG, language);
-        contentValues.put(COLUMN_LANG, language);
+        contentValues.put(COLUMN_STATUS, status);
+        contentValues.put(COLUMN_CURR_PAGE, currPage);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1){

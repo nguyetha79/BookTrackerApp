@@ -1,8 +1,10 @@
-package de.ur.mi.android.booktrackerapp;
+package de.ur.mi.android.booktrackerapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import de.ur.mi.android.booktrackerapp.R;
 
 public class ShowDetailBook extends AppCompatActivity {
 
