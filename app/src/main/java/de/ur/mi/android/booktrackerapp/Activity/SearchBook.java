@@ -28,17 +28,12 @@ import de.ur.mi.android.booktrackerapp.Adapter.SearchBookAdapter;
 
 public class SearchBook extends AppCompatActivity {
 
-//    private final String url = "https://www.googleapis.com/books/v1/volumes?q=";
-   private final String appid = "AIzaSyA3-yTj806Jgx7lbJfHgU7KwsN6M9HXjbY";
-
     private RecyclerView recyclerViewSearchBook;
     private ImageView buttonSearch;
     private ProgressBar progressBar;
     private EditText bookInput;
-    private RequestQueue mRequestQueue;
 
     private ArrayList<BookItemModel> bookItemsList;
-    private ArrayList<String> titles, authors, covers;
     private SearchBookAdapter adapter;
     private BookItemModel bookItemModel;
 
@@ -122,7 +117,7 @@ public class SearchBook extends AppCompatActivity {
                             adapter = new SearchBookAdapter(this, bookItemsList);
 
                             LinearLayoutManager linearLayoutManager =
-                                    new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+                                    new LinearLayoutManager(this);
                             recyclerViewSearchBook = findViewById(R.id.recyclerView_search_book);
                             recyclerViewSearchBook.setLayoutManager(linearLayoutManager);
                             recyclerViewSearchBook.setAdapter(adapter);

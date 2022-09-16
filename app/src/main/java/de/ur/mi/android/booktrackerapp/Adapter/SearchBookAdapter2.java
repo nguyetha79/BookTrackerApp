@@ -1,8 +1,11 @@
 package de.ur.mi.android.booktrackerapp.Adapter;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +26,21 @@ import de.ur.mi.android.booktrackerapp.R;
 
 public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.MyViewHolder> {
 
-    private final RecyclerViewInterface recyclerViewInterface;
-
     private Context context;
     private ArrayList<BookItemModel> bookItemsList;
+    private OnItemClickListener mListener;
 
-    public SearchBookAdapter2(Context context, ArrayList<BookItemModel> bookItemsList,
-                              RecyclerViewInterface recyclerViewInterface) {
+    public interface OnItemClickListener{
+        void onItemClick(int pos);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
+
+    public SearchBookAdapter2(Context context, ArrayList<BookItemModel> bookItemsList) {
         this.context = context;
         this.bookItemsList = bookItemsList;
-        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -40,7 +48,7 @@ public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.book_item_model, parent, false);
-        return new MyViewHolder(view, recyclerViewInterface);
+        return new MyViewHolder(view, mListener);
     }
 
     @Override
@@ -64,6 +72,20 @@ public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.
             Picasso.get().load(coverLink).into(holder.ivBookCover);
         }
 
+//        holder.mainLayoutBookItem.setOnClickListener(view -> {
+//
+//              Intent intent = new Intent(context, AddBookActivity.class);
+//              intent.putExtra("title", currBookItemModel.getTitle());
+//              intent.putExtra("author", currBookItemModel.getAuthor());
+//              intent.putExtra("cover", currBookItemModel.getCover());
+//              intent.putExtra("numPages", currBookItemModel.getNumPages());
+//              intent.putExtra("rating", currBookItemModel.getRating());
+//              intent.putExtra("language", currBookItemModel.getLanguage());
+//
+//              context.startActivity(intent);
+//            Log.d(TAG, "adapter");
+//        });
+
     }
 
     @Override
@@ -74,19 +96,23 @@ public class SearchBookAdapter2 extends RecyclerView.Adapter<SearchBookAdapter2.
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView tvBookTitle, tvBookAuthors;
         private ImageView ivBookCover;
+        private LinearLayout mainLayoutBookItem;
 
-        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
+        public MyViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
             tvBookTitle = itemView.findViewById(R.id.tv_title_book_item);
             tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item);
             ivBookCover = itemView.findViewById(R.id.iv_cover_book_item);
+            mainLayoutBookItem = itemView.findViewById(R.id.main_layout_book_item);
 
-            itemView.setOnClickListener(view -> {
-                if (recyclerViewInterface != null){
-                    int pos = getAdapterPosition();
-
-                    if (pos != RecyclerView.NO_POSITION){
-                        recyclerViewInterface.onItemClick(pos);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
                     }
                 }
             });

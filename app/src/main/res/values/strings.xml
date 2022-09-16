@@ -6,6 +6,7 @@
     <string name="btn_add">ADD</string>
     <string name="btn_update">UPDATE</string>
     <string name="btn_delete">DELETE</string>
+    <string name="btn_select">SELECT</string>
     <string name="btn_open_map">Find nearby bookstore</string>
 
     <string name="my_library">My Library</string>

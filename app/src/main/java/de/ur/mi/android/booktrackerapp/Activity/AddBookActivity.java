@@ -65,15 +65,14 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
             title = getIntent().getStringExtra("title");
             author = getIntent().getStringExtra("author");
             cover = getIntent().getStringExtra("cover");
-            rating = getIntent().getDoubleExtra("rating", 0.00);
-            numPages = getIntent().getIntExtra("numPages", 0);
+            rating = Double.parseDouble(getIntent().getStringExtra("rating"));
+            numPages = Integer.parseInt(getIntent().getStringExtra("numPages"));
             language = getIntent().getStringExtra("language");
 
             tvTitleAdd.setText(title);
         } else {
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
-
 
     }
 

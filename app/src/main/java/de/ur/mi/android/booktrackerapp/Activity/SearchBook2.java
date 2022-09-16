@@ -23,12 +23,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import de.ur.mi.android.booktrackerapp.Adapter.RecyclerViewInterface;
 import de.ur.mi.android.booktrackerapp.Adapter.SearchBookAdapter2;
 import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
 import de.ur.mi.android.booktrackerapp.R;
 
-public class SearchBook2 extends AppCompatActivity implements RecyclerViewInterface {
+public class SearchBook2 extends AppCompatActivity {
 
     private RecyclerView recyclerViewSearchBook;
     private ImageView buttonSearch;
@@ -116,13 +115,24 @@ public class SearchBook2 extends AppCompatActivity implements RecyclerViewInterf
 
                             bookItemModel = new BookItemModel(title, author, cover, rating, numPages, language);
                             bookItemsList.add(bookItemModel);
-                            adapter = new SearchBookAdapter2(this, bookItemsList, this);
+                            adapter = new SearchBookAdapter2(this, bookItemsList);
 
                             LinearLayoutManager linearLayoutManager =
                                     new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
                             recyclerViewSearchBook = findViewById(R.id.recyclerView_search_book);
                             recyclerViewSearchBook.setLayoutManager(linearLayoutManager);
                             recyclerViewSearchBook.setAdapter(adapter);
+
+                            adapter.setOnItemClickListener(pos -> {
+                                Intent intent = new Intent(SearchBook2.this, AddBookActivity.class);
+
+                                  intent.putExtra("title", bookItemsList.get(pos).getTitle());
+                                  intent.putExtra("author",  bookItemsList.get(pos).getAuthor());
+                                  intent.putExtra("cover",  bookItemsList.get(pos).getCover());
+                                  intent.putExtra("numPages",  bookItemsList.get(pos).getNumPages());
+                                  intent.putExtra("rating",  bookItemsList.get(pos).getRating());
+                                  intent.putExtra("language",  bookItemsList.get(pos).getLanguage());
+                            });
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -131,19 +141,6 @@ public class SearchBook2 extends AppCompatActivity implements RecyclerViewInterf
                 }, error -> Toast.makeText(this, error.toString().trim(), Toast.LENGTH_SHORT).show());
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-    }
-
-    @Override
-    public void onItemClick(int position) {
-        Intent intent = new Intent(SearchBook2.this, AddBookActivity.class);
-        intent.putExtra("title", bookItemsList.get(position).getTitle());
-        intent.putExtra("author", bookItemsList.get(position).getAuthor());
-        intent.putExtra("cover", bookItemsList.get(position).getCover());
-        intent.putExtra("numPages", bookItemsList.get(position).getNumPages());
-        intent.putExtra("rating", bookItemsList.get(position).getRating());
-        intent.putExtra("language", bookItemsList.get(position).getLanguage());
-
-        startActivity(intent);
     }
 
 //    private void getBookInfos(String query) {
