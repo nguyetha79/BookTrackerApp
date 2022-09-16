@@ -1,6 +1,5 @@
 package de.ur.mi.android.booktrackerapp.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +29,12 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
 
     private String title, author, cover, language, status;
     private int numPages;
-    private int currPage;
+    private int currPageAdd;
     private double rating;
 
     private TextView tvTitleAdd;
     private Spinner spinnerAdd;
-    private EditText currPageInput;
+    private EditText currPageInputAdd;
     private Button addButton;
     private LinearLayout linearLayoutCurrPageAdd;
 
@@ -48,7 +46,7 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
         linearLayoutCurrPageAdd = findViewById(R.id.Llayout_curr_page_add);
         tvTitleAdd =findViewById(R.id.tv_title_content_add);
         spinnerAdd = findViewById(R.id.spinner_add);
-        currPageInput = findViewById(R.id.editText_curr_page_add);
+        currPageInputAdd = findViewById(R.id.editText_curr_page_add);
         addButton = findViewById(R.id.btn_add);
 
         getIntentData();
@@ -56,7 +54,7 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
 
         addButton.setOnClickListener(view -> {
             MyDatabaseHelper myDB = new MyDatabaseHelper(AddBookActivity.this);
-            myDB.addData(title, author, cover, rating, numPages, language, status, currPage);
+            myDB.addData(title, author, cover, rating, numPages, language, status, currPageAdd);
         });
     }
 
@@ -109,16 +107,16 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
 
         switch (status) {
             case "To read":
-                linearLayoutCurrPageAdd.setVisibility(View.INVISIBLE);
-                currPage = 0;
+                linearLayoutCurrPageAdd.setVisibility(View.GONE);
+                currPageAdd = 0;
                 break;
             case "Reading":
                 linearLayoutCurrPageAdd.setVisibility(View.VISIBLE);
-                currPage = getValueFromEditText(currPageInput);
+                currPageAdd = getValueFromEditText(currPageInputAdd);
                 break;
             case "Read":
-                linearLayoutCurrPageAdd.setVisibility(View.INVISIBLE);
-                currPage = numPages;
+                linearLayoutCurrPageAdd.setVisibility(View.GONE);
+                currPageAdd = numPages;
                 break;
         }
     }

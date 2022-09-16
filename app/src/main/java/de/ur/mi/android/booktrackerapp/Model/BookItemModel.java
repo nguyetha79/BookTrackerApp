@@ -10,7 +10,7 @@ public class BookItemModel {
     private String language;
     private String status;
     private int currPage;
-    private int progress;
+    private String note;
 
 
     public BookItemModel(String title, String author, String cover,
@@ -24,7 +24,7 @@ public class BookItemModel {
     }
 
     public BookItemModel(int id, String title, String author, String cover, double rating,
-                         int numPages, String language, String status, int currPage) {
+                         int numPages, String language, String status, int currPage, String note) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -34,6 +34,7 @@ public class BookItemModel {
         this.language = language;
         this.status = status;
         this.currPage = currPage;
+        this.note = note;
     }
 
     public String getCover() {
@@ -100,11 +101,19 @@ public class BookItemModel {
         this.status = status;
     }
 
-    public int getProgress() {
-        return progress;
+    public String getNote() {
+        return note;
     }
 
-    public void setProgress(int progress) {
-        this.progress = progress;
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

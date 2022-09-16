@@ -105,14 +105,19 @@ public class SearchBook extends AppCompatActivity {
                             }
 
                             double rating;
-                            int numPages;
                             if (!jsonObjVolume.has("averageRating")){
                                 rating = 0;
-                                numPages = 0;
                             } else {
                                 rating = jsonObjVolume.getDouble("averageRating");
+                            }
+
+                            int numPages;
+                            if (!jsonObjVolume.has("pageCount")){
+                                numPages = 0;
+                            } else {
                                 numPages = jsonObjVolume.getInt("pageCount");
                             }
+
 
                             String language = jsonObjVolume.getString("language");
 

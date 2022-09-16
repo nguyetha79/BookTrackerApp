@@ -65,6 +65,7 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
         holder.btnDetail.setOnClickListener(view -> {
             Intent intent = new Intent(context, ShowDetailBook.class);
 
+            intent.putExtra("id", currBookItemModel.getId());
             intent.putExtra("title", currBookItemModel.getTitle());
             intent.putExtra("author", currBookItemModel.getAuthor());
             intent.putExtra("cover", currBookItemModel.getCover());

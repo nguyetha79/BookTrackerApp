@@ -21,10 +21,10 @@
             android:layout_marginTop="7dp">
 
             <ImageView
-                android:id="@+id/imageView_cover_detail"
+                android:id="@+id/imageView_cover_book_infos"
                 android:layout_width="186dp"
                 android:layout_height="231dp"
-                android:layout_below="@id/tv_author_book_item_show"
+                android:layout_below="@id/tv_author_book_infos"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="22dp"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -33,7 +33,10 @@
                 android:id="@+id/tv_title_book_infos"
                 android:layout_width="wrap_content"
                 android:layout_height="38dp"
-                android:layout_margin="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:padding="3dp"
                 android:text="@string/book_title"
@@ -43,7 +46,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_author_book_item_show"
+                android:id="@+id/tv_author_book_infos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_title_book_infos"
@@ -140,6 +143,7 @@
 
                         <TextView
                             android:id="@+id/num_pages"
+                            android:layout_centerHorizontal="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
@@ -336,13 +340,12 @@
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="no previous note"
-                        android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam "
                         android:textColor="@color/color_secondary"
                         android:textSize="20sp" />
                 </ScrollView>
 
                 <Button
-                    android:id="@+id/btn_open_map"
+                    android:id="@+id/btn_launch_map"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/scrollView_note_book_infos"

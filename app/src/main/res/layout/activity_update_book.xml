@@ -33,12 +33,12 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:id="@+id/Rlayout_title_add"
+                    android:id="@+id/Rlayout_title_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/tv_title_add"
+                        android:id="@+id/tv_title_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
@@ -47,10 +47,10 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/tv_title_content_add"
+                        android:id="@+id/tv_title_content_update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_title_add"
+                        android:layout_below="@+id/tv_title_update"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="@string/book_title"
                         android:textColor="@color/color_primary"
@@ -59,15 +59,15 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/Llayout_status_add"
+                    android:id="@+id/Llayout_status_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/Rlayout_title_add"
+                    android:layout_below="@+id/Rlayout_title_update"
                     android:layout_marginTop="25dp"
                     android:weightSum="3">
 
                     <TextView
-                        android:id="@+id/tv_status_add"
+                        android:id="@+id/tv_status_update"
                         android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -89,15 +89,16 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/Llayout_curr_page_add"
+                    android:id="@+id/Llayout_curr_page_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/Llayout_status_add"
+                    android:layout_below="@+id/Llayout_status_update"
                     android:layout_marginTop="25dp"
-                    android:weightSum="2">
+                    android:weightSum="2"
+                    android:visibility="gone">
 
                     <TextView
-                        android:id="@+id/tv_curr_page_add"
+                        android:id="@+id/editText_curr_page_update"
                         android:layout_width="184dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -115,13 +116,13 @@
                         android:paddingTop="5dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView_note_update"
+                            android:id="@+id/cardView_curr_page_update"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/bgr_color">
 
                             <EditText
-                                android:id="@+id/editText_note_update"
+                                android:id="@+id/tv_num_curr_page_update"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins_medium"
@@ -170,10 +171,11 @@
                         android:id="@+id/scroll_view_note"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@id/tv_note">
+                        android:layout_below="@id/tv_note"
+                        android:layout_marginTop="1dp">
 
                         <EditText
-                            android:id="@+id/tv_note_content"
+                            android:id="@+id/editText_note_content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_note"

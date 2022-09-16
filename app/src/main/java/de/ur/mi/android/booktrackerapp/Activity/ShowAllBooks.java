@@ -31,7 +31,7 @@ public class ShowAllBooks extends AppCompatActivity {
 
     private MyDatabaseHelper myDB;
     private ArrayList<BookItemModel> bookItemsList;
-    private ArrayList<String> ids, titles, authors, covers, ratings, numPages, languages, status, currPages;
+    private ArrayList<String> ids, titles, authors, covers, ratings, numPages, languages, status, currPages, notes;
     private ShowAllBooksAdapter adapter;
 
     @Override
@@ -73,6 +73,7 @@ public class ShowAllBooks extends AppCompatActivity {
         languages = new ArrayList<>();
         status = new ArrayList<>();
         currPages = new ArrayList<>();
+        notes = new ArrayList<>();
     }
 
     private void setUpBookItemsList() {
@@ -90,6 +91,7 @@ public class ShowAllBooks extends AppCompatActivity {
                 languages.add(cursor.getString(6));
                 status.add(cursor.getString(7));
                 currPages.add(cursor.getString(8));
+                notes.add(cursor.getString(9));
             }
         }
 
@@ -103,7 +105,8 @@ public class ShowAllBooks extends AppCompatActivity {
                     Integer.parseInt(numPages.get(i)),
                     languages.get(i),
                     status.get(i),
-                    Integer.parseInt(currPages.get(i)));
+                    Integer.parseInt(currPages.get(i)),
+                    notes.get(i));
             bookItemsList.add(bookItem);
         }
     }

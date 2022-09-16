@@ -15,7 +15,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "BookTrackerApp.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     private static final String TABLE_NAME = "my_bookTrackerApp";
     private static final String COLUMN_ID = "_id";
@@ -27,6 +27,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_LANG = "language";
     private static final String COLUMN_STATUS = "status";
     private static final String COLUMN_CURR_PAGE = "curr_page";
+    private static final String COLUMN_NOTE = "note";
 
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -45,7 +46,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                         COLUMN_PAGES + " INTEGER, " +
                         COLUMN_LANG + " TEXT, " +
                         COLUMN_STATUS + " TEXT, " +
-                        COLUMN_CURR_PAGE + " INTEGER);";
+                        COLUMN_CURR_PAGE + " INTEGER, " +
+                        COLUMN_NOTE + " TEXT);";
         db.execSQL(query);
     }
 
@@ -88,6 +90,21 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    public void updateData(String row_id, String title, String status, int currPage, String note){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_STATUS, status);
+        cv.put(COLUMN_CURR_PAGE, currPage);
+        cv.put(COLUMN_NOTE, note);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if (result == -1){
+            Toast.makeText(context, "Failed to update!", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void deleteAll(){
