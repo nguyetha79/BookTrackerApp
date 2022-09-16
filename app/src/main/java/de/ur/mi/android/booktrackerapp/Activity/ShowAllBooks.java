@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 public class ShowAllBooks extends AppCompatActivity {
 
     private FloatingActionButton floatingActionButton;
+    private Button btnDetail;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
 
@@ -37,6 +39,7 @@ public class ShowAllBooks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_all_books);
 
+        btnDetail = findViewById(R.id.btn_detail);
         recyclerView = findViewById(R.id.recyclerView_show_books);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout_show_books);
         initFloatingActionButton();

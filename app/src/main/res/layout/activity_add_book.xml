@@ -94,7 +94,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Llayout_status_add"
             android:layout_marginTop="25dp"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/tv_curr_page_add"

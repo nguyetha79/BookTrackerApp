@@ -1,13 +1,21 @@
 package de.ur.mi.android.booktrackerapp.Activity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,12 +38,14 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
     private Spinner spinnerAdd;
     private EditText currPageInput;
     private Button addButton;
+    private LinearLayout linearLayoutCurrPageAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
 
+        linearLayoutCurrPageAdd = findViewById(R.id.Llayout_curr_page_add);
         tvTitleAdd =findViewById(R.id.tv_title_content_add);
         spinnerAdd = findViewById(R.id.spinner_add);
         currPageInput = findViewById(R.id.editText_curr_page_add);
@@ -43,13 +53,13 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
 
         getIntentData();
         initSpinner();
-        currPage = getValueFromEditText(currPageInput);
 
         addButton.setOnClickListener(view -> {
             MyDatabaseHelper myDB = new MyDatabaseHelper(AddBookActivity.this);
             myDB.addData(title, author, cover, rating, numPages, language, status, currPage);
         });
     }
+
 
     private int getValueFromEditText(EditText editText) {
         try {
@@ -83,10 +93,34 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
             tvTitleAdd.setText(title);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
-            status = parent.getItemAtPosition(position).toString();
-            Toast.makeText(parent.getContext(), status, Toast.LENGTH_SHORT).show();
+        status = parent.getItemAtPosition(position).toString();
+
+        TextView tvStatus = ((TextView) parent.getChildAt(0));
+        tvStatus.setTextColor(Color.parseColor("#8D4C2E"));
+
+        Typeface typeface = getResources().getFont(R.font.poppins_medium);
+        tvStatus.setTypeface(typeface);
+        tvStatus.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
+
+        Toast.makeText(parent.getContext(), status, Toast.LENGTH_SHORT).show();
+
+        switch (status) {
+            case "To read":
+                linearLayoutCurrPageAdd.setVisibility(View.INVISIBLE);
+                currPage = 0;
+                break;
+            case "Reading":
+                linearLayoutCurrPageAdd.setVisibility(View.VISIBLE);
+                currPage = getValueFromEditText(currPageInput);
+                break;
+            case "Read":
+                linearLayoutCurrPageAdd.setVisibility(View.INVISIBLE);
+                currPage = numPages;
+                break;
+        }
     }
 
     @Override

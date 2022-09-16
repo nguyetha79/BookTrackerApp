@@ -14,25 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/book_item_model_show.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/AddBookActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/AddBookActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/SearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/SearchBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/SearchBook2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/ShowAllBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/ShowAllBooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/RecyclerViewInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/SearchBookAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/SearchBookAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/SearchBookAdapter2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/ShowAllBooksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Adapter/ShowAllBooksAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Model/BookItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Model/BookItemModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_all_books.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_all_books.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_detail_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_detail_book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/book_item_model.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/book_item_model_search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
