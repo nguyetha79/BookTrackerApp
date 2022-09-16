@@ -45,7 +45,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:ems="10"
-                android:backgroundTint=""
                 android:fontFamily="@font/poppins_medium"
                 android:hint="Enter your book title"
                 android:inputType="textPersonName"
