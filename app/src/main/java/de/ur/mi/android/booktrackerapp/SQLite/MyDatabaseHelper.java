@@ -15,9 +15,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "BookTrackerApp.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 5;
 
     private static final String TABLE_NAME = "my_bookTrackerApp";
+    private static final String COLUMN_ID = "_id";
     private static final String COLUMN_TITLE = "title";
     private static final String COLUMN_AUTHORS = "authors";
     private static final String COLUMN_COVER = "cover";
@@ -36,7 +37,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query =
                 "CREATE TABLE " + TABLE_NAME +
-                        " (" + COLUMN_TITLE + " TEXT, " +
+                        " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_TITLE + " TEXT, " +
                         COLUMN_AUTHORS + " TEXT, " +
                         COLUMN_COVER + " TEXT, " +
                         COLUMN_RATING + " DOUBLE, " +
@@ -53,16 +55,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addData(String cover, String title, String authors,
+    public void addData(String title, String authors, String cover,
                         double rating, int pages, String language,
                         String status, int currPage){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(COLUMN_COVER, cover);
         contentValues.put(COLUMN_TITLE, title);
         contentValues.put(COLUMN_AUTHORS, authors);
+        contentValues.put(COLUMN_COVER, cover);
         contentValues.put(COLUMN_RATING, rating);
         contentValues.put(COLUMN_PAGES, pages);
         contentValues.put(COLUMN_LANG, language);

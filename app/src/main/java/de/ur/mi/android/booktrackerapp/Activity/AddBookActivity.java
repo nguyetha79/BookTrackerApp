@@ -12,13 +12,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
 import de.ur.mi.android.booktrackerapp.R;
 import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
 public class AddBookActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String title, author, cover, language, status;
-    private int numPages, currPage;
+    private int numPages;
+    private int currPage;
     private double rating;
 
     private TextView tvTitleAdd;
@@ -38,12 +43,25 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
 
         getIntentData();
         initSpinner();
-        currPage = Integer.parseInt(currPageInput.getText().toString().trim());
+        currPage = getValueFromEditText(currPageInput);
 
         addButton.setOnClickListener(view -> {
             MyDatabaseHelper myDB = new MyDatabaseHelper(AddBookActivity.this);
             myDB.addData(title, author, cover, rating, numPages, language, status, currPage);
         });
+    }
+
+    private int getValueFromEditText(EditText editText) {
+        try {
+            NumberFormat format = NumberFormat.getInstance(Locale.ENGLISH);
+            Number value = format.parse(editText.getText().toString());
+            if (value != null) {
+                return value.intValue();
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return (int) 0d;
     }
 
     private void initSpinner() {
@@ -55,25 +73,14 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private void getIntentData() {
-        if (getIntent().hasExtra("title")
-            && getIntent().hasExtra("author")
-            && getIntent().hasExtra("cover")
-            && getIntent().hasExtra("rating")
-            && getIntent().hasExtra("numPages")
-            && getIntent().hasExtra("language")){
-
             title = getIntent().getStringExtra("title");
             author = getIntent().getStringExtra("author");
             cover = getIntent().getStringExtra("cover");
-            rating = Double.parseDouble(getIntent().getStringExtra("rating"));
-            numPages = Integer.parseInt(getIntent().getStringExtra("numPages"));
+            rating = getIntent().getDoubleExtra("rating", 0.0);
+            numPages = getIntent().getIntExtra("numPages", 0);
             language = getIntent().getStringExtra("language");
 
             tvTitleAdd.setText(title);
-        } else {
-            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
-        }
-
     }
 
     @Override

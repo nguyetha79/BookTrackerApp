@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/iv_cover_book_item"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="70dp"
+                android:layout_height="85dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
@@ -38,6 +38,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <RelativeLayout
+                android:layout_centerVertical="true"
                 android:id="@+id/Rlayout_title_author_book_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

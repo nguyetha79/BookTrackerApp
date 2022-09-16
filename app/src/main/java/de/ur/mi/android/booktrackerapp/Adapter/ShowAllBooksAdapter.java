@@ -6,9 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,9 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import de.ur.mi.android.booktrackerapp.Activity.AddBookActivity;
 import de.ur.mi.android.booktrackerapp.Activity.ShowDetailBook;
-import de.ur.mi.android.booktrackerapp.Activity.UpdateBookActivity;
 import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
 import de.ur.mi.android.booktrackerapp.R;
 
@@ -29,12 +26,17 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
     Context context;
     ArrayList<BookItemModel> bookItemsList;
 
+    public ShowAllBooksAdapter(Context context, ArrayList<BookItemModel> bookItemsList) {
+        this.context = context;
+        this.bookItemsList = bookItemsList;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.book_item_model, parent,false);
+        View view = inflater.inflate(R.layout.book_item_model_show, parent,false);
         return new MyViewHolder(view);
     }
 
@@ -50,7 +52,7 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
         holder.tvBookTitle.setText(title);
         holder.tvBookAuthors.setText(author);
 
-        if (coverLink =="No cover"){
+        if (coverLink.equals("No cover")){
             String uri = "@drawable/no_book_cover_available";
             int imageResource = context.getResources()
                     .getIdentifier(uri, null, context.getPackageName());
@@ -60,14 +62,14 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
             Picasso.get().load(coverLink).into(holder.ivBookCover);
         }
 
-        holder.mainLayoutBookItem.setOnClickListener(view -> {
+        holder.btnDetail.setOnClickListener(view -> {
             Intent intent = new Intent(context, ShowDetailBook.class);
 
             intent.putExtra("title", currBookItemModel.getTitle());
             intent.putExtra("author", currBookItemModel.getAuthor());
             intent.putExtra("cover", currBookItemModel.getCover());
-            intent.putExtra("numPages", currBookItemModel.getNumPages());
             intent.putExtra("rating", currBookItemModel.getRating());
+            intent.putExtra("numPages", currBookItemModel.getNumPages());
             intent.putExtra("language", currBookItemModel.getLanguage());
             intent.putExtra("status", currBookItemModel.getStatus());
             intent.putExtra("currPage", currBookItemModel.getLanguage());
@@ -86,16 +88,16 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
 
         private TextView tvBookTitle, tvBookAuthors;
         private ImageView ivBookCover;
-        private LinearLayout mainLayoutBookItem;
+        private Button btnDetail;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvBookTitle = itemView.findViewById(R.id.tv_title_book_item);
-            tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item);
-            ivBookCover = itemView.findViewById(R.id.iv_cover_book_item);
+            tvBookTitle = itemView.findViewById(R.id.tv_title_book_item_show);
+            tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item_show);
+            ivBookCover = itemView.findViewById(R.id.iv_cover_book_item_show);
 
-            mainLayoutBookItem = itemView.findViewById(R.id.main_layout_book_item);
+            btnDetail = itemView.findViewById(R.id.btn_detail);
         }
     }
 }
