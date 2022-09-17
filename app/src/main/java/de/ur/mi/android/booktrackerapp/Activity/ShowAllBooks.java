@@ -1,5 +1,6 @@
 package de.ur.mi.android.booktrackerapp.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -10,6 +11,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.Toast;
@@ -32,7 +36,8 @@ public class ShowAllBooks extends AppCompatActivity {
 
     private MyDatabaseHelper myDB;
     private ArrayList<BookItemModel> bookItemsList;
-    private ArrayList<String> ids, titles, authors, covers, ratings, numPages, languages, status, currPages, notes;
+    private ArrayList<String> ids, titles, authors, covers, ratings,
+                                numPages, languages, status, currPages, notes;
     private ShowAllBooksAdapter adapter;
 
     @Override
@@ -97,7 +102,7 @@ public class ShowAllBooks extends AppCompatActivity {
 
         for (int i = 0; i < titles.size() ; i++) {
             BookItemModel bookItem = new BookItemModel(
-                    Integer.parseInt(ids.get(i)),
+                    ids.get(i),
                     titles.get(i),
                     authors.get(i),
                     covers.get(i),
@@ -124,5 +129,23 @@ public class ShowAllBooks extends AppCompatActivity {
         if(requestCode == 1){
             recreate();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.delete_all){
+            Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
+            MyDatabaseHelper myDB = new MyDatabaseHelper(this);
+            myDB.deleteAll();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

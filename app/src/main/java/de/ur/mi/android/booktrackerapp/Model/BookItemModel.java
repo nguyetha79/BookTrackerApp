@@ -1,7 +1,7 @@
 package de.ur.mi.android.booktrackerapp.Model;
 
 public class BookItemModel {
-    private int id;
+    private String id;
     private String title;
     private String author;
     private String cover;
@@ -23,7 +23,7 @@ public class BookItemModel {
         this.language = language;
     }
 
-    public BookItemModel(int id, String title, String author, String cover, double rating,
+    public BookItemModel(String id, String title, String author, String cover, double rating,
                          int numPages, String language, String status, int currPage, String note) {
         this.id = id;
         this.title = title;
@@ -109,11 +109,11 @@ public class BookItemModel {
         this.note = note;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

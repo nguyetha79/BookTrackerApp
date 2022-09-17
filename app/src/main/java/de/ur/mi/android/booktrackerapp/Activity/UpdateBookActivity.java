@@ -47,6 +47,8 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
 
         MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBookActivity.this);
         updateBtn.setOnClickListener(view -> {
+
+            id = getIntent().getStringExtra("id");
             statusUpdate = tvStatusUpdate.getText().toString();
             currPageUpdate = getValueFromEditText(currPageInputUpdate);
             noteUpdate = noteInputUpdate.getText().toString();
@@ -62,6 +64,7 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
         currPageInputUpdate = findViewById(R.id.tv_num_curr_page_update);
         noteInputUpdate = findViewById(R.id.editText_note_content);
         updateBtn = findViewById(R.id.btn_update_book);
+
 
         title = getIntent().getStringExtra("title");
         numPages = getIntent().getIntExtra("numPages", 0);

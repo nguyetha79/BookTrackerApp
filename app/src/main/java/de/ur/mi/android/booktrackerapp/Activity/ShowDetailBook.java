@@ -1,7 +1,9 @@
 package de.ur.mi.android.booktrackerapp.Activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -15,10 +17,11 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import de.ur.mi.android.booktrackerapp.R;
+import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
 public class ShowDetailBook extends AppCompatActivity {
 
-    private String title, author, coverLink, language, status, note;
+    private String id, title, author, coverLink, language, status, note;
     private int numPages, currPage;
     private double rating;
 
@@ -46,6 +49,9 @@ public class ShowDetailBook extends AppCompatActivity {
 
             startActivity(intent);
         });
+        btnDelete.setOnClickListener(view -> {
+            confirmDialog();
+        });
 
     }
 
@@ -72,6 +78,8 @@ public class ShowDetailBook extends AppCompatActivity {
     }
 
     private void getIntentData() {
+
+        id = getIntent().getStringExtra("id");
         title = getIntent().getStringExtra("title");
         author = getIntent().getStringExtra("author");
         coverLink = getIntent().getStringExtra("cover");
@@ -125,5 +133,19 @@ public class ShowDetailBook extends AppCompatActivity {
         intent.setData(Uri.parse("geo:49.013432,12.101624"));
         Intent chooser = Intent.createChooser(intent, "Launch Map");
         startActivity(chooser);
+    }
+
+    private void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete this book ?");
+        builder.setMessage("Are you sure that you want to delete " + title + " ?");
+        builder.setPositiveButton("Yes", (dialogInterface, i) -> {
+            MyDatabaseHelper myDB = new MyDatabaseHelper(ShowDetailBook.this);
+            myDB.deleteData(id);
+        });
+        builder.setNegativeButton("No", (dialogInterface, i) -> {
+
+        });
+        builder.create().show();
     }
 }
