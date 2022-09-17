@@ -1,15 +1,16 @@
 package de.ur.mi.android.booktrackerapp.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,9 +23,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import de.ur.mi.android.booktrackerapp.Adapter.SearchBookAdapter;
 import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
 import de.ur.mi.android.booktrackerapp.R;
-import de.ur.mi.android.booktrackerapp.Adapter.SearchBookAdapter;
 
 public class SearchBook extends AppCompatActivity {
 
@@ -91,8 +92,7 @@ public class SearchBook extends AppCompatActivity {
                             if (!jsonObjVolume.has("authors")){
                                 author += "No author";
                             } else {
-                                JSONArray authorsArray = jsonObjVolume.getJSONArray("authors");
-                                author = (String) authorsArray.get(0);
+                                author = getAuthor(jsonObjVolume);
                             }
 
                             JSONObject imageLinks;
@@ -104,20 +104,14 @@ public class SearchBook extends AppCompatActivity {
                                 cover = imageLinks.getString("thumbnail");
                             }
 
-                            double rating;
-                            if (!jsonObjVolume.has("averageRating")){
-                                rating = 0;
-                            } else {
-                                rating = jsonObjVolume.getDouble("averageRating");
-                            }
-
+                            Double rating;
                             int numPages;
-                            if (!jsonObjVolume.has("pageCount")){
-                                numPages = 0;
-                            } else {
-                                numPages = jsonObjVolume.getInt("pageCount");
-                            }
 
+                            rating = jsonObjVolume.has("averageRating")
+                                   ? jsonObjVolume.getDouble("averageRating") : 0;
+
+                            numPages = jsonObjVolume.has("pageCount")
+                                    ? jsonObjVolume.getInt("pageCount") : 0;
 
                             String language = jsonObjVolume.getString("language");
 
@@ -142,5 +136,19 @@ public class SearchBook extends AppCompatActivity {
         recyclerViewSearchBook = findViewById(R.id.recyclerView_search_book);
         recyclerViewSearchBook.setLayoutManager(linearLayoutManager);
         recyclerViewSearchBook.setAdapter(adapter);
+    }
+
+    private static String getAuthor(final JSONObject jsonObject) {
+        try {
+            final JSONArray authors = jsonObject.getJSONArray("authors");
+            int numAuthors = authors.length();
+            final String[] authorStrings = new String[numAuthors];
+            for (int i = 0; i < numAuthors; ++i) {
+                authorStrings[i] = authors.getString(i);
+            }
+            return TextUtils.join(", ", authorStrings);
+        } catch (JSONException e) {
+            return "";
+        }
     }
 }

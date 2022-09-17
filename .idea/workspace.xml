@@ -13,7 +13,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update" />
+    <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/AddBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/SearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/SearchBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowAllBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowAllBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/UpdateBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/UpdateBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Model/BookItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Model/BookItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/_903245_book_love_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/book_love_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/_903245_book_love_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/book_love_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/_903245_book_love_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/book_love_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/_903245_book_love_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/book_love_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/_903245_book_love_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/book_love_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/_903245_book_love_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/book_love_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_detail_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_detail_book.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/book_item_model_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/book_item_model_search.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +111,7 @@
       <recent name="de.ur.mi.android.booktrackerapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.ur.mi.android.booktrackerapp.Activities" />
       <recent name="de.ur.mi.android.booktrackerapp.Activity" />
       <recent name="de.ur.mi.android.booktrackerapp.Adapter" />
     </key>

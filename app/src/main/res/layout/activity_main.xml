@@ -49,7 +49,7 @@
             android:layout_height="153dp"
             android:layout_below="@id/app_name"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/_903245_book_love_icon" />
+            app:srcCompat="@drawable/book_love_icon" />
 
         <Button
             android:id="@+id/btn_continue"

@@ -100,7 +100,7 @@ public class ShowAllBooks extends AppCompatActivity {
 
         for (int i = 0; i < titles.size() ; i++) {
             BookItemModel bookItem = new BookItemModel(
-                    ids.get(i),
+                    Integer.parseInt(ids.get(i)),
                     titles.get(i),
                     authors.get(i),
                     covers.get(i),
@@ -119,6 +119,7 @@ public class ShowAllBooks extends AppCompatActivity {
         adapter = new ShowAllBooksAdapter(ShowAllBooks.this,this, bookItemsList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, numCols));
+        adapter.notifyDataSetChanged();
     }
 
     @Override

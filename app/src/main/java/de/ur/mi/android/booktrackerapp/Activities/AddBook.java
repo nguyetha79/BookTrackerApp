@@ -27,8 +27,7 @@ import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 public class AddBook extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String title, author, cover, language, status;
-    private int numPages;
-    private int currPageAdd;
+    private int numPages, currPageAdd;
     private double rating;
 
     private TextView tvTitleAdd;
@@ -42,13 +41,7 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
 
-        linearLayoutCurrPageAdd = findViewById(R.id.Llayout_curr_page_add);
-        tvTitleAdd =findViewById(R.id.tv_title_content_add);
-        spinnerAdd = findViewById(R.id.spinner_add);
-        currPageInputAdd = findViewById(R.id.editText_curr_page_add);
-        addButton = findViewById(R.id.btn_add);
-
-        getIntentData();
+        getAndSetData();
         initSpinner();
 
         addButton.setOnClickListener(view -> {
@@ -57,6 +50,27 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
         });
     }
 
+
+    private void getAndSetData() {
+        linearLayoutCurrPageAdd = findViewById(R.id.Llayout_curr_page_add);
+        tvTitleAdd =findViewById(R.id.tv_title_content_add);
+        spinnerAdd = findViewById(R.id.spinner_add);
+        currPageInputAdd = findViewById(R.id.editText_curr_page_add);
+        addButton = findViewById(R.id.btn_add);
+
+        getIntentData();
+
+        tvTitleAdd.setText(title);
+    }
+
+    private void getIntentData() {
+        title = getIntent().getStringExtra("title");
+        author = getIntent().getStringExtra("author");
+        cover = getIntent().getStringExtra("cover");
+        rating = getIntent().getDoubleExtra("rating", 0.0);
+        numPages = getIntent().getIntExtra("numPages", 0);
+        language = getIntent().getStringExtra("language");
+    }
 
     private int getValueFromEditText(EditText editText) {
         try {
@@ -77,17 +91,6 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerAdd.setAdapter(spinnerAdapter);
         spinnerAdd.setOnItemSelectedListener(this);
-    }
-
-    private void getIntentData() {
-            title = getIntent().getStringExtra("title");
-            author = getIntent().getStringExtra("author");
-            cover = getIntent().getStringExtra("cover");
-            rating = getIntent().getDoubleExtra("rating", 0.0);
-            numPages = getIntent().getIntExtra("numPages", 0);
-            language = getIntent().getStringExtra("language");
-
-            tvTitleAdd.setText(title);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

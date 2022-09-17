@@ -26,7 +26,10 @@ import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
 public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private String id, title, statusUpdate, noteUpdate;
+    private int id;
+    private String title;
+    private String statusUpdate;
+    private String noteUpdate;
     private int  currPageUpdate, numPages;
 
     private TextView tvTitleBookUpdate, tvStatusUpdate;
@@ -44,10 +47,9 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         getAndSetData();
         initSpinner();
 
-        MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBook.this);
         updateBtn.setOnClickListener(view -> {
+            MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBook.this);
 
-            id = getIntent().getStringExtra("id");
             statusUpdate = tvStatusUpdate.getText().toString();
             currPageUpdate = getValueFromEditText(currPageInputUpdate);
             noteUpdate = noteInputUpdate.getText().toString();
@@ -64,7 +66,7 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         noteInputUpdate = findViewById(R.id.editText_note_content);
         updateBtn = findViewById(R.id.btn_update_book);
 
-
+        id = getIntent().getIntExtra("id", 0);
         title = getIntent().getStringExtra("title");
         numPages = getIntent().getIntExtra("numPages", 0);
         statusUpdate = getIntent().getStringExtra("status");
