@@ -54,9 +54,9 @@
             android:layout_marginBottom="60dp"
             android:backgroundTint="@color/color_primary"
             android:clickable="true"
-            app:tint="@color/bgr_color"
             app:maxImageSize="50dp"
-            app:srcCompat="@drawable/add_icon" />
+            app:srcCompat="@drawable/add_icon"
+            app:tint="@color/bgr_color" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout_show_books"
