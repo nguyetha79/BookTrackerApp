@@ -13,17 +13,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/delete_all_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/my_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/ShowAllBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/ShowAllBooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/ShowDetailBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/ShowDetailBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/UpdateBookActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activity/UpdateBookActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Model/BookItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Model/BookItemModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" afterDir="false" />
-    </list>
+    <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

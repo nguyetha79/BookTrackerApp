@@ -1,4 +1,4 @@
-package de.ur.mi.android.booktrackerapp.Activity;
+package de.ur.mi.android.booktrackerapp.Activities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -25,7 +24,7 @@ import java.util.Locale;
 import de.ur.mi.android.booktrackerapp.R;
 import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
-public class AddBookActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AddBook extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String title, author, cover, language, status;
     private int numPages;
@@ -53,7 +52,7 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
         initSpinner();
 
         addButton.setOnClickListener(view -> {
-            MyDatabaseHelper myDB = new MyDatabaseHelper(AddBookActivity.this);
+            MyDatabaseHelper myDB = new MyDatabaseHelper(AddBook.this);
             myDB.addData(title, author, cover, rating, numPages, language, status, currPageAdd);
         });
     }

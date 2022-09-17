@@ -1,4 +1,4 @@
-package de.ur.mi.android.booktrackerapp.Activity;
+package de.ur.mi.android.booktrackerapp.Activities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -25,7 +24,7 @@ import java.util.Locale;
 import de.ur.mi.android.booktrackerapp.R;
 import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
-public class UpdateBookActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String id, title, statusUpdate, noteUpdate;
     private int  currPageUpdate, numPages;
@@ -45,7 +44,7 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
         getAndSetData();
         initSpinner();
 
-        MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBookActivity.this);
+        MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBook.this);
         updateBtn.setOnClickListener(view -> {
 
             id = getIntent().getStringExtra("id");

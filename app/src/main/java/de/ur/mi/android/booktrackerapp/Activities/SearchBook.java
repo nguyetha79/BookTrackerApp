@@ -1,4 +1,4 @@
-package de.ur.mi.android.booktrackerapp.Activity;
+package de.ur.mi.android.booktrackerapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import de.ur.mi.android.booktrackerapp.Activity.ShowDetailBook;
+import de.ur.mi.android.booktrackerapp.Activities.ShowDetailBook;
 import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
 import de.ur.mi.android.booktrackerapp.R;
 

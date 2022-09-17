@@ -20,20 +20,20 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.AddBookActivity"
+            android:name=".Activities.AddBook"
             android:exported="false" />
         <activity
-            android:name=".Activity.UpdateBookActivity"
-            android:parentActivityName=".Activity.ShowDetailBook"
+            android:name=".Activities.UpdateBook"
+            android:parentActivityName=".Activities.ShowDetailBook"
             android:exported="false" />
         <activity
-            android:name=".Activity.ShowDetailBook"
+            android:name=".Activities.ShowDetailBook"
             android:exported="false" />
         <activity
-            android:name=".Activity.SearchBook"
+            android:name=".Activities.SearchBook"
             android:exported="false" />
         <activity
-            android:name=".Activity.ShowAllBooks"
+            android:name=".Activities.ShowAllBooks"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

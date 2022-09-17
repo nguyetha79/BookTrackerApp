@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import de.ur.mi.android.booktrackerapp.Activity.AddBookActivity;
+import de.ur.mi.android.booktrackerapp.Activities.AddBook;
 import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
 import de.ur.mi.android.booktrackerapp.R;
 
@@ -62,7 +62,7 @@ public class SearchBookAdapter extends RecyclerView.Adapter<SearchBookAdapter.My
 
         holder.btnSelect.setOnClickListener(view -> {
 
-              Intent intent = new Intent(context, AddBookActivity.class);
+              Intent intent = new Intent(context, AddBook.class);
               intent.putExtra("title", currBookItemModel.getTitle());
               intent.putExtra("author", currBookItemModel.getAuthor());
               intent.putExtra("cover", currBookItemModel.getCover());

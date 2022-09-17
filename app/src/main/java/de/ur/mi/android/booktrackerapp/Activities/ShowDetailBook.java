@@ -1,14 +1,12 @@
-package de.ur.mi.android.booktrackerapp.Activity;
+package de.ur.mi.android.booktrackerapp.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -40,7 +38,7 @@ public class ShowDetailBook extends AppCompatActivity {
 
         btnLaunchMap.setOnClickListener(view -> launchGoogleMap());
         btnUpdate.setOnClickListener(view -> {
-            Intent intent = new Intent(ShowDetailBook.this, UpdateBookActivity.class);
+            Intent intent = new Intent(ShowDetailBook.this, UpdateBook.class);
 
             intent.putExtra("title", title);
             intent.putExtra("numPages", numPages);
