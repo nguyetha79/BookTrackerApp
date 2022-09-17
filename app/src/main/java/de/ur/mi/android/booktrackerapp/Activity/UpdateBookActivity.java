@@ -50,7 +50,7 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
     }
 
     private void getAndSetData() {
-        tvTitleBookUpdate = findViewById(R.id.tv_title_update);
+        tvTitleBookUpdate = findViewById(R.id.tv_title_content_update);
         spinnerUpdate = findViewById(R.id.spinner_update);
         linearLayoutCurrPageUpdate = findViewById(R.id.Llayout_curr_page_update);
         currPageInputUpdate = findViewById(R.id.tv_num_curr_page_update);
@@ -79,15 +79,12 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
         statusUpdate = parent.getItemAtPosition(position).toString();
 
-        TextView tvStatus = ((TextView) parent.getChildAt(0));
-        tvStatus.setText(statusUpdate);
-        tvStatus.setTextColor(Color.parseColor("#8D4C2E"));
+        TextView tvStatusUpdate = (TextView) parent.getChildAt(0);
+        tvStatusUpdate.setTextColor(Color.parseColor("#8D4C2E"));
 
         Typeface typeface = getResources().getFont(R.font.poppins_medium);
-        tvStatus.setTypeface(typeface);
-        tvStatus.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
-
-        Toast.makeText(parent.getContext(), statusUpdate, Toast.LENGTH_SHORT).show();
+        tvStatusUpdate.setTypeface(typeface);
+        tvStatusUpdate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
 
         switch (statusUpdate) {
             case "To read":

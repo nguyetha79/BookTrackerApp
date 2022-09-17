@@ -34,10 +34,12 @@ public class ShowDetailBook extends AppCompatActivity {
         setContentView(R.layout.activity_show_detail_book);
 
         getAndSetData();
+
         btnLaunchMap.setOnClickListener(view -> launchGoogleMap());
         btnUpdate.setOnClickListener(view -> {
             Intent intent = new Intent(ShowDetailBook.this, UpdateBookActivity.class);
 
+            intent.putExtra("title", title);
             intent.putExtra("numPages", numPages);
             intent.putExtra("status", status);
             intent.putExtra("currPage", currPage);
@@ -64,7 +66,7 @@ public class ShowDetailBook extends AppCompatActivity {
 
         getIntentData();
         setUpData();
-//        setUpSeekBar();
+        setUpSeekBar();
 
     }
 
@@ -106,8 +108,13 @@ public class ShowDetailBook extends AppCompatActivity {
 
     private void setUpSeekBar() {
         seekBar.setMax(100);
-        int progress = (currPage / numPages) * 100;
-        seekBar.setProgress(progress);
+        if (numPages!=0){
+            int progress = (currPage / numPages) * 100;
+            seekBar.setProgress(progress);
+        } else {
+            return;
+        }
+
     }
 
     private void launchGoogleMap() {

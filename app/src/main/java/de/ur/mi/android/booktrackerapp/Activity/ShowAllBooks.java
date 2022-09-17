@@ -51,7 +51,6 @@ public class ShowAllBooks extends AppCompatActivity {
             setUpAdapterShowAllBooks();
             swipeRefreshLayout.setRefreshing(false);
         });
-
     }
 
     private void initFloatingActionButton() {
@@ -117,6 +116,4 @@ public class ShowAllBooks extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, numCols));
     }
-
-
 }

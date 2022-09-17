@@ -103,8 +103,6 @@ public class AddBookActivity extends AppCompatActivity implements AdapterView.On
         tvStatus.setTypeface(typeface);
         tvStatus.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
 
-        Toast.makeText(parent.getContext(), status, Toast.LENGTH_SHORT).show();
-
         switch (status) {
             case "To read":
                 linearLayoutCurrPageAdd.setVisibility(View.GONE);
