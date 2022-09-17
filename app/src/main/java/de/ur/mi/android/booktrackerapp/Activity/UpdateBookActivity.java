@@ -30,7 +30,7 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
     private String id, title, statusUpdate, noteUpdate;
     private int  currPageUpdate, numPages;
 
-    private TextView tvTitleBookUpdate;
+    private TextView tvTitleBookUpdate, tvStatusUpdate;
     private Spinner spinnerUpdate;
     private LinearLayout linearLayoutCurrPageUpdate;
     private EditText currPageInputUpdate;
@@ -46,7 +46,13 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
         initSpinner();
 
         MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBookActivity.this);
-        updateBtn.setOnClickListener(view -> myDB.updateData(id, title, statusUpdate, currPageUpdate, noteUpdate));
+        updateBtn.setOnClickListener(view -> {
+            statusUpdate = tvStatusUpdate.getText().toString();
+            currPageUpdate = getValueFromEditText(currPageInputUpdate);
+            noteUpdate = noteInputUpdate.getText().toString();
+
+            myDB.updateData(id, statusUpdate, currPageUpdate, noteUpdate);
+        });
     }
 
     private void getAndSetData() {
@@ -79,7 +85,7 @@ public class UpdateBookActivity extends AppCompatActivity implements AdapterView
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
         statusUpdate = parent.getItemAtPosition(position).toString();
 
-        TextView tvStatusUpdate = (TextView) parent.getChildAt(0);
+        tvStatusUpdate = (TextView) parent.getChildAt(0);
         tvStatusUpdate.setTextColor(Color.parseColor("#8D4C2E"));
 
         Typeface typeface = getResources().getFont(R.font.poppins_medium);

@@ -24,6 +24,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.UpdateBookActivity"
+            android:parentActivityName=".Activity.ShowDetailBook"
             android:exported="false" />
         <activity
             android:name=".Activity.ShowDetailBook"

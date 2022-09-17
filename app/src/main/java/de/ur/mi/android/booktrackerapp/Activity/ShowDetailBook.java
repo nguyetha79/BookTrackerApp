@@ -22,7 +22,7 @@ public class ShowDetailBook extends AppCompatActivity {
     private int numPages, currPage;
     private double rating;
 
-    private TextView tvTitleBookInfos, tvAuthorBookInfos;
+    private TextView tvTitleBookInfos, tvAuthorBookInfos, tvNoteContentBookInfos;
     private ImageView ivCoverBookInfos;
     private TextView tvNumRating, tvNumPages, tvLang, tvCurrStatus;
     private Button btnUpdate, btnDelete, btnLaunchMap;
@@ -59,6 +59,7 @@ public class ShowDetailBook extends AppCompatActivity {
         tvNumPages = findViewById(R.id.num_pages);
         tvLang = findViewById(R.id.lang_content);
         tvCurrStatus = findViewById(R.id.tv_curr_status_book_infos);
+        tvNoteContentBookInfos = findViewById(R.id.tv_note_content_book_infos);
 
         btnLaunchMap = findViewById(R.id.btn_launch_map);
         btnUpdate = findViewById(R.id.btn_update_book_infos);
@@ -104,6 +105,8 @@ public class ShowDetailBook extends AppCompatActivity {
 
         tvLang.setText(language);
         tvCurrStatus.setText(status);
+
+        tvNoteContentBookInfos.setText(note);
     }
 
     private void setUpSeekBar() {

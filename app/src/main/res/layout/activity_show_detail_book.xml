@@ -330,7 +330,7 @@
                     android:layout_below="@id/tv_note_book_infos">
 
                     <TextView
-                        android:id="@+id/tv_note_content"
+                        android:id="@+id/tv_note_content_book_infos"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_note_book_infos"

@@ -92,11 +92,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void updateData(String row_id, String title, String status, int currPage, String note){
+    public void updateData(String row_id, String status, int currPage, String note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_TITLE, title);
         cv.put(COLUMN_STATUS, status);
         cv.put(COLUMN_CURR_PAGE, currPage);
         cv.put(COLUMN_NOTE, note);

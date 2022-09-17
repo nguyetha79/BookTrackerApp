@@ -1,5 +1,6 @@
 package de.ur.mi.android.booktrackerapp.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -24,9 +25,11 @@ import de.ur.mi.android.booktrackerapp.R;
 public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapter.MyViewHolder> {
 
     Context context;
+    Activity activity;
     ArrayList<BookItemModel> bookItemsList;
 
-    public ShowAllBooksAdapter(Context context, ArrayList<BookItemModel> bookItemsList) {
+    public ShowAllBooksAdapter(Activity activity, Context context, ArrayList<BookItemModel> bookItemsList) {
+        this.activity = activity;
         this.context = context;
         this.bookItemsList = bookItemsList;
     }
@@ -74,10 +77,10 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
             intent.putExtra("language", currBookItemModel.getLanguage());
             intent.putExtra("status", currBookItemModel.getStatus());
             intent.putExtra("currPage", currBookItemModel.getLanguage());
+            intent.putExtra("note", currBookItemModel.getNote());
 
-            context.startActivity(intent);
+            activity.startActivityForResult(intent, 1);
         });
-
     }
 
     @Override

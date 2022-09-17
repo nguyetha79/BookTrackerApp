@@ -1,5 +1,6 @@
 package de.ur.mi.android.booktrackerapp.Activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -112,8 +113,16 @@ public class ShowAllBooks extends AppCompatActivity {
 
     private void setUpAdapterShowAllBooks() {
         int numCols = 2;
-        adapter = new ShowAllBooksAdapter(ShowAllBooks.this, bookItemsList);
+        adapter = new ShowAllBooksAdapter(ShowAllBooks.this,this, bookItemsList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, numCols));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 }
