@@ -123,7 +123,6 @@ public class ShowDetailBook extends AppCompatActivity {
         } else {
             return;
         }
-
     }
 
     private void launchGoogleMap() {
