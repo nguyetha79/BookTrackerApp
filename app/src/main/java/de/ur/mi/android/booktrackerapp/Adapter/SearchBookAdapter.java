@@ -6,8 +6,11 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +28,7 @@ public class SearchBookAdapter extends RecyclerView.Adapter<SearchBookAdapter.My
 
     private Context context;
     private ArrayList<BookItemModel> bookItemsList;
+    private Animation translateAnim;
 
     public SearchBookAdapter(Context context, ArrayList<BookItemModel> bookItemsList) {
         this.context = context;
@@ -84,6 +88,7 @@ public class SearchBookAdapter extends RecyclerView.Adapter<SearchBookAdapter.My
         private TextView tvBookTitle, tvBookAuthors;
         private ImageView ivBookCover;
         private Button btnSelect;
+        private LinearLayout mainLayoutBookItemSearch;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,6 +96,10 @@ public class SearchBookAdapter extends RecyclerView.Adapter<SearchBookAdapter.My
             tvBookAuthors = itemView.findViewById(R.id.tv_author_book_item);
             ivBookCover = itemView.findViewById(R.id.iv_cover_book_item);
             btnSelect = itemView.findViewById(R.id.btn_select);
+
+            mainLayoutBookItemSearch =itemView.findViewById(R.id.main_layout_book_item);
+            translateAnim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
+            mainLayoutBookItemSearch.setAnimation(translateAnim);
         }
     }
 }
