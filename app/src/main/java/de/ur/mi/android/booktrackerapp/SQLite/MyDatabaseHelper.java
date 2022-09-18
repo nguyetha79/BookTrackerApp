@@ -59,7 +59,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public void addData(String title, String authors, String cover,
                         double rating, int pages, String language,
-                        String status, int currPage){
+                        String status, int currPage, String note){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -72,6 +72,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_LANG, language);
         contentValues.put(COLUMN_STATUS, status);
         contentValues.put(COLUMN_CURR_PAGE, currPage);
+        contentValues.put(COLUMN_NOTE, note);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1){

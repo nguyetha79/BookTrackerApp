@@ -26,7 +26,7 @@ import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
 public class AddBook extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private String title, author, cover, language, status;
+    private String title, author, cover, language, status, note;
     private int numPages, currPageAdd;
     private double rating;
 
@@ -44,9 +44,10 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
         getAndSetData();
         initSpinner();
 
+        note="";
         addButton.setOnClickListener(view -> {
             MyDatabaseHelper myDB = new MyDatabaseHelper(AddBook.this);
-            myDB.addData(title, author, cover, rating, numPages, language, status, currPageAdd);
+            myDB.addData(title, author, cover, rating, numPages, language, status, currPageAdd, note);
         });
     }
 
