@@ -108,10 +108,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void deleteData(String id){
+    public void deleteData(int id){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        long result = db.delete(TABLE_NAME, "_id=?", new String[]{id});
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{String.valueOf(id)});
         if (result == -1){
             Toast.makeText(context, "Failed to delete!", Toast.LENGTH_SHORT).show();
         }else {

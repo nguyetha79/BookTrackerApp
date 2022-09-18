@@ -26,11 +26,10 @@ import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
 public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private int id;
     private String title;
     private String statusUpdate;
     private String noteUpdate;
-    private int  currPageUpdate, numPages;
+    private int id, currPageUpdate, numPages;
 
     private TextView tvTitleBookUpdate, tvStatusUpdate;
     private Spinner spinnerUpdate;

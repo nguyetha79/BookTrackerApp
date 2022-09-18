@@ -19,8 +19,8 @@ import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
 
 public class ShowDetailBook extends AppCompatActivity {
 
-    private String id, title, author, coverLink, language, status, note;
-    private int numPages, currPage;
+    private String title, author, coverLink, language, status, note;
+    private int id, numPages, currPage;
     private double rating;
 
     private TextView tvTitleBookInfos, tvAuthorBookInfos, tvNoteContentBookInfos;
@@ -77,7 +77,7 @@ public class ShowDetailBook extends AppCompatActivity {
 
     private void getIntentData() {
 
-        id = getIntent().getStringExtra("id");
+        id = getIntent().getIntExtra("id", 0);
         title = getIntent().getStringExtra("title");
         author = getIntent().getStringExtra("author");
         coverLink = getIntent().getStringExtra("cover");
