@@ -84,6 +84,8 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         spinnerUpdate.setOnItemSelectedListener(this);
     }
 
+
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
@@ -95,6 +97,7 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         Typeface typeface = getResources().getFont(R.font.poppins_medium);
         tvStatusUpdate.setTypeface(typeface);
         tvStatusUpdate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
+
 
         switch (statusUpdate) {
             case "To read":
@@ -111,7 +114,6 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
                 break;
         }
     }
-
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
