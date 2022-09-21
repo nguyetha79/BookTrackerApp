@@ -15,7 +15,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowDetailBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowDetailBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_book.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +34,9 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="valueResourceFile" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="resourceFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +50,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="1" />
@@ -67,7 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="E:/OOP Regensburg/2. Semester/Android/BookApplication" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Android Übung/4/U04-ToDo-Liste-solution/U04-ToDo-Liste-solution" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
   </component>
   <component name="RecentsManager">
@@ -90,6 +94,7 @@
       <recent name="de.ur.mi.android.booktrackerapp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.ur.mi.android.booktrackerapp" />
       <recent name="de.ur.mi.android.booktrackerapp.Activity" />
     </key>
     <key name="android.template.-1568833844">
@@ -97,8 +102,9 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="de.ur.mi.android.booktrackerapp.Activities" />
-      <recent name="de.ur.mi.android.booktrackerapp.Activity" />
       <recent name="de.ur.mi.android.booktrackerapp.Adapter" />
+      <recent name="de.ur.mi.android.booktrackerapp.Model" />
+      <recent name="de.ur.mi.android.booktrackerapp.Activity" />
     </key>
   </component>
   <component name="RunManager">
@@ -120,7 +126,7 @@
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
         <option name="SHOW_STATIC_VARS" value="true" />
@@ -184,7 +190,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/test" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

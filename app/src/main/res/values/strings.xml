@@ -21,6 +21,7 @@
     <string name="tv_progress">Progress</string>
 
     <string-array name="status">
+        <item> </item>
         <item>To read</item>
         <item>Reading</item>
         <item>Read</item>
