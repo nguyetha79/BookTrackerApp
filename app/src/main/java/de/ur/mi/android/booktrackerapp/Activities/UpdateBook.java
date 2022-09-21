@@ -53,7 +53,7 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
             currPageUpdate = getValueFromEditText(currPageInputUpdate);
             noteUpdate = noteInputUpdate.getText().toString();
 
-            myDB.updateData(id, statusUpdate, currPageUpdate, noteUpdate);
+            myDB.updateData(id, title, statusUpdate, currPageUpdate, noteUpdate);
         });
     }
 

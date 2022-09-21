@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
@@ -92,7 +90,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void updateData(int id, String status, int currPage, String note){
+    public void updateData(int id, String title, String status, int currPage, String note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -100,7 +98,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_CURR_PAGE, currPage);
         cv.put(COLUMN_NOTE, note);
 
-        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{String.valueOf(id)});
+        long result = db.update(TABLE_NAME, cv, "title = '" + title +"'", null);
         if (result == -1){
             Toast.makeText(context, "Failed to update!", Toast.LENGTH_SHORT).show();
         }else {
