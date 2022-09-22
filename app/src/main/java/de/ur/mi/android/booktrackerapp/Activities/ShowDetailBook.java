@@ -112,7 +112,8 @@ public class ShowDetailBook extends AppCompatActivity {
         tvCurrStatus.setText(status);
 
         tvNoteContentBookInfos.setText(note);
-    }
+
+     }
 
     private void setUpSlider() {
         if (numPages!=0){

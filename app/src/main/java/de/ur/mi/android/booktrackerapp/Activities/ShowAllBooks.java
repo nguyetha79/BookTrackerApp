@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -119,7 +120,6 @@ public class ShowAllBooks extends AppCompatActivity {
         adapter = new ShowAllBooksAdapter(ShowAllBooks.this,this, bookItemsList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, numCols));
-        adapter.notifyDataSetChanged();
     }
 
     @Override

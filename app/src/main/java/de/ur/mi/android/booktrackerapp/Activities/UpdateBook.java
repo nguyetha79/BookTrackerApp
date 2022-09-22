@@ -29,7 +29,7 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
     private String title;
     private String statusUpdate;
     private String noteUpdate;
-    private int id, currPageUpdate, numPages;
+    private int currPageUpdate, numPages;
 
     private TextView tvTitleBookUpdate, tvStatusUpdate;
     private Spinner spinnerUpdate;
@@ -53,7 +53,7 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
             currPageUpdate = getValueFromEditText(currPageInputUpdate);
             noteUpdate = noteInputUpdate.getText().toString();
 
-            myDB.updateData(id, title, statusUpdate, currPageUpdate, noteUpdate);
+            myDB.updateData(title, statusUpdate, currPageUpdate, noteUpdate);
         });
     }
 
@@ -65,7 +65,6 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         noteInputUpdate = findViewById(R.id.editText_note_content);
         updateBtn = findViewById(R.id.btn_update_book);
 
-        id = getIntent().getIntExtra("id", 0);
         title = getIntent().getStringExtra("title");
         numPages = getIntent().getIntExtra("numPages", 0);
         statusUpdate = getIntent().getStringExtra("status");
@@ -96,7 +95,6 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         Typeface typeface = getResources().getFont(R.font.poppins_medium);
         tvStatusUpdate.setTypeface(typeface);
         tvStatusUpdate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f);
-
 
         switch (statusUpdate) {
             case "To read":
