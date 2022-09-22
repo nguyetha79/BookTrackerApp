@@ -9,9 +9,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.android.material.slider.Slider;
 import com.squareup.picasso.Picasso;
 
 import de.ur.mi.android.booktrackerapp.R;
@@ -27,7 +27,7 @@ public class ShowDetailBook extends AppCompatActivity {
     private ImageView ivCoverBookInfos;
     private TextView tvNumRating, tvNumPages, tvLang, tvCurrStatus;
     private Button btnUpdate, btnDelete, btnLaunchMap;
-    private SeekBar seekBar;
+    private Slider slider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class ShowDetailBook extends AppCompatActivity {
         setContentView(R.layout.activity_show_detail_book);
 
         getAndSetData();
+        setUpSlider();
 
         btnLaunchMap.setOnClickListener(view -> launchGoogleMap());
         btnUpdate.setOnClickListener(view -> {
@@ -55,7 +56,7 @@ public class ShowDetailBook extends AppCompatActivity {
 
     private void getAndSetData() {
         ivCoverBookInfos = findViewById(R.id.imageView_cover_book_infos);
-        seekBar = findViewById(R.id.seekBar);
+        slider = findViewById(R.id.slider);
 
         tvTitleBookInfos = findViewById(R.id.tv_title_book_infos);
         tvAuthorBookInfos = findViewById(R.id.tv_author_book_infos);
@@ -71,8 +72,6 @@ public class ShowDetailBook extends AppCompatActivity {
 
         getIntentData();
         setUpData();
-        setUpSeekBar();
-
     }
 
     private void getIntentData() {
@@ -115,13 +114,10 @@ public class ShowDetailBook extends AppCompatActivity {
         tvNoteContentBookInfos.setText(note);
     }
 
-    private void setUpSeekBar() {
-        seekBar.setMax(100);
+    private void setUpSlider() {
         if (numPages!=0){
             int progress = (currPage / numPages) * 100;
-            seekBar.setProgress(progress);
-        } else {
-            return;
+            slider.setValue(progress);
         }
     }
 
