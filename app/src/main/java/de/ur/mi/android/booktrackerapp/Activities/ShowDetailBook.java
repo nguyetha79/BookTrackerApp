@@ -1,39 +1,35 @@
 package de.ur.mi.android.booktrackerapp.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import android.location.LocationManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.api.ResolvableApiException;
-import com.google.android.gms.location.LocationCallback;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.LocationSettingsResponse;
-import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.slider.Slider;
 import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 import de.ur.mi.android.booktrackerapp.R;
 import de.ur.mi.android.booktrackerapp.SQLite.MyDatabaseHelper;
@@ -44,6 +40,9 @@ public class ShowDetailBook extends AppCompatActivity {
     private int id, numPages, currPage;
     private double rating, latitude, longtitude;
     private LocationRequest locationRequest;
+
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    private final static int REQUEST_CODE = 1;
 
     private TextView tvTitleBookInfos, tvAuthorBookInfos, tvNoteContentBookInfos;
     private ImageView ivCoverBookInfos;
@@ -133,101 +132,64 @@ public class ShowDetailBook extends AppCompatActivity {
     }
 
     private void initBtnLaunchMap() {
-        locationRequest = LocationRequest.create();
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(5000);
-        locationRequest.setFastestInterval(2000);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        btnLaunchMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                    if (ActivityCompat.checkSelfPermission(ShowDetailBook.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED){
+        btnLaunchMap.setOnClickListener(view -> getLastLocation());
 
-                        if (isGPSEnabled()) {
-
-                            LocationServices.getFusedLocationProviderClient(ShowDetailBook.this)
-                                    .requestLocationUpdates(locationRequest, new LocationCallback() {
-                                        @Override
-                                        public void onLocationResult(@NonNull LocationResult locationResult) {
-                                            super.onLocationResult(locationResult);
-
-                                            LocationServices.getFusedLocationProviderClient(ShowDetailBook.this)
-                                                    .removeLocationUpdates(this);
-
-                                            if (locationResult != null && locationResult.getLocations().size() > 0){
-                                                int index = locationResult.getLocations().size() -1;
-                                                latitude = locationResult.getLocations().get(index).getLatitude();
-                                                longtitude = locationResult.getLocations().get(index).getLongitude();
-
-                                                launchGoogleMap();
-                                            }
-                                        }
-                                    }, Looper.getMainLooper());
-                        }else {
-                            turnOnGPS();
-                        }
-                    } else {
-                        requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-                    }
-                }
-            }
-        });
     }
 
-    private boolean isGPSEnabled(){
-        LocationManager locationManager = null;
-        boolean isEnabled = false;
+    private void getLastLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
 
-        if (locationManager == null) {
-            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            fusedLocationProviderClient.getLastLocation()
+                    .addOnSuccessListener(location -> {
+                        if (location != null) {
+                            Geocoder geocoder = new Geocoder(ShowDetailBook.this, Locale.getDefault());
+                            List<Address> addresses = null;
+                            try {
+                                addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                                latitude = addresses.get(0).getLatitude();
+                                longtitude = addresses.get(0).getLongitude();
+                                launchGoogleMap();
+                                Log.d(String.valueOf(latitude), "getLastLocation");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+        }else {
+            askPermission();
         }
-        isEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        return isEnabled;
+    }
+
+    private void askPermission() {
+        ActivityCompat.requestPermissions(ShowDetailBook.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLastLocation();
+
+            } else {
+                Toast.makeText(ShowDetailBook.this, "Please provide the required permission", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void launchGoogleMap() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("geo:"+ latitude +"," + longtitude));
-        Intent chooser = Intent.createChooser(intent, "Launch Map");
-        startActivity(chooser);
-    }
+//        Intent intent = new Intent(Intent.ACTION_VIEW);
+//        intent.setData(Uri.parse("geo:"+ latitude +"," + longtitude));
+//        Intent chooser = Intent.createChooser(intent, "Launch Map");
+//        startActivity(chooser);
 
-    private void turnOnGPS() {
-
-        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
-                .addLocationRequest(locationRequest);
-        builder.setAlwaysShow(true);
-
-        Task<LocationSettingsResponse> result
-                = LocationServices.getSettingsClient(getApplicationContext())
-                                  .checkLocationSettings(builder.build());
-
-        result.addOnCompleteListener(task -> {
-
-            try {
-                LocationSettingsResponse response = task.getResult(ApiException.class);
-                Toast.makeText(ShowDetailBook.this, "GPS is already turned on", Toast.LENGTH_SHORT).show();
-
-            } catch (ApiException e) {
-
-                switch (e.getStatusCode()) {
-                    case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
-
-                        try {
-                            ResolvableApiException resolvableApiException = (ResolvableApiException) e;
-                            resolvableApiException.startResolutionForResult(ShowDetailBook.this, 2);
-                        } catch (IntentSender.SendIntentException ex) {
-                            ex.printStackTrace();
-                        }
-                        break;
-
-                    case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
-                        break;
-                }
-            }
-        });
+        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitude, longtitude);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(intent);
     }
 
     private void initBtnUpdate() {

@@ -28,10 +28,6 @@
             android:parentActivityName=".Activities.ShowAllBooks"
             android:exported="false" />
         <activity
-            android:name=".Activities.ShowDetailBook"
-            android:parentActivityName=".Activities.ShowAllBooks"
-            android:exported="false" />
-        <activity
             android:name=".Activities.SearchBook"
             android:exported="false" />
         <activity

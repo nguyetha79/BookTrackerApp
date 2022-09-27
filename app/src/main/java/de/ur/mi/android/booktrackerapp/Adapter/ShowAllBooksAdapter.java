@@ -18,7 +18,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import de.ur.mi.android.booktrackerapp.Activities.ShowDetailBook;
 import de.ur.mi.android.booktrackerapp.Model.BookItemModel;
 import de.ur.mi.android.booktrackerapp.R;
 
@@ -66,7 +65,7 @@ public class ShowAllBooksAdapter extends RecyclerView.Adapter<ShowAllBooksAdapte
         }
 
         holder.btnDetail.setOnClickListener(view -> {
-            Intent intent = new Intent(context, ShowDetailBook.class);
+            Intent intent = new Intent(context, ShowDetailBook3.class);
 
             intent.putExtra("id", currBookItemModel.getId());
             intent.putExtra("title", currBookItemModel.getTitle());

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.ShowDetailBook">
+    tools:context=".Activities.ShowDetailBook3">
 
     <LinearLayout
         android:id="@+id/Llayout_detail_book"
@@ -362,7 +362,7 @@
                     android:paddingTop="10dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
-                    android:text="@string/btn_open_map"
+                    android:text="@string/btn_launch_map"
                     android:textColor="@color/bgr_color"
                     android:textSize="15sp" />
             </RelativeLayout>
