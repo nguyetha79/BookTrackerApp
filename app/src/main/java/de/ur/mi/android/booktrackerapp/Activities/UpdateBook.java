@@ -44,17 +44,9 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         setContentView(R.layout.activity_update_book);
 
         getAndSetData();
+
         initSpinner();
-
-        updateBtn.setOnClickListener(view -> {
-            MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBook.this);
-
-            statusUpdate = tvStatusUpdate.getText().toString();
-            currPageUpdate = getValueFromEditText(currPageInputUpdate);
-            noteUpdate = noteInputUpdate.getText().toString();
-
-            myDB.updateData(title, statusUpdate, currPageUpdate, noteUpdate);
-        });
+        initBtnUpdate();
     }
 
     private void getAndSetData() {
@@ -82,7 +74,17 @@ public class UpdateBook extends AppCompatActivity implements AdapterView.OnItemS
         spinnerUpdate.setOnItemSelectedListener(this);
     }
 
+    private void initBtnUpdate() {
+        updateBtn.setOnClickListener(view -> {
+            MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateBook.this);
 
+            statusUpdate = tvStatusUpdate.getText().toString();
+            currPageUpdate = getValueFromEditText(currPageInputUpdate);
+            noteUpdate = noteInputUpdate.getText().toString();
+
+            myDB.updateData(title, statusUpdate, currPageUpdate, noteUpdate);
+        });
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override

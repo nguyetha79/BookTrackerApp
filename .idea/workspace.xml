@@ -14,12 +14,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a39fdd-3c2e-4cf0-ad8f-3c358f28c5c0" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowAllBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowAllBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/AddBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/SearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/SearchBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowDetailBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/ShowDetailBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/UpdateBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/Activities/UpdateBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/ur/mi/android/booktrackerapp/SQLite/MyDatabaseHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663829020524</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1663866479246</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663866479246</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

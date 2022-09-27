@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,14 +43,10 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
         setContentView(R.layout.activity_add_book);
 
         getAndSetData();
+
         initSpinner();
-
-        addButton.setOnClickListener(view -> {
-            MyDatabaseHelper myDB = new MyDatabaseHelper(AddBook.this);
-            myDB.addData(title, author, cover, rating, numPages, language, status, currPageAdd);
-        });
+        initBtnAdd();
     }
-
 
     private void getAndSetData() {
         linearLayoutCurrPageAdd = findViewById(R.id.Llayout_curr_page_add);
@@ -72,25 +69,19 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
         language = getIntent().getStringExtra("language");
     }
 
-    private int getValueFromEditText(EditText editText) {
-        try {
-            NumberFormat format = NumberFormat.getInstance(Locale.ENGLISH);
-            Number value = format.parse(editText.getText().toString());
-            if (value != null) {
-                return value.intValue();
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return (int) 0d;
-    }
-
     private void initSpinner() {
         ArrayAdapter<CharSequence> spinnerAdapter =
                 ArrayAdapter.createFromResource(this, R.array.status, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerAdd.setAdapter(spinnerAdapter);
         spinnerAdd.setOnItemSelectedListener(this);
+    }
+
+    private void initBtnAdd() {
+        addButton.setOnClickListener(view -> {
+            MyDatabaseHelper myDB = new MyDatabaseHelper(AddBook.this);
+            myDB.addData(title, author, cover, rating, numPages, language, status, currPageAdd);
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -125,4 +116,18 @@ public class AddBook extends AppCompatActivity implements AdapterView.OnItemSele
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    private int getValueFromEditText(EditText editText) {
+        try {
+            NumberFormat format = NumberFormat.getInstance(Locale.ENGLISH);
+            Number value = format.parse(editText.getText().toString());
+            if (value != null) {
+                return value.intValue();
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return (int) 0d;
+    }
+
 }

@@ -47,10 +47,10 @@ public class SearchBook extends AppCompatActivity {
         bookInput = findViewById(R.id.editText_search_book);
         buttonSearch = findViewById(R.id.search_btn);
 
-        initButtonSearch();
+        initBtnSearch();
     }
 
-    private void initButtonSearch() {
+    private void initBtnSearch() {
         buttonSearch.setOnClickListener(view -> {
             progressBar.setVisibility(View.VISIBLE);
 
