@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="de.ur.mi.android.booktrackerapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +17,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookTrackerApp"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activities.AddBook"
+            android:parentActivityName=".Activities.ShowAllBooks"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.UpdateBook"
+            android:parentActivityName=".Activities.ShowAllBooks"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SearchBook"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ShowAllBooks"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
